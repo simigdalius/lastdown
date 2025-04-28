@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://nqtqjc8uspdc"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_r2n56"]
+[ext_resource type="Script" path="res://UI/enemyUi.gd" id="2_fgdhn"]
+[ext_resource type="PackedScene" uid="uid://dm1lp64ck2uq5" path="res://animassets/enemyskin.tscn" id="3_08g0q"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qyloj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_771nn"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j0taw"]
+
+[node name="enemy" type="CharacterBody3D" groups=["enemy"]]
+script = ExtResource("1_r2n56")
+move_speed = 5.0
+initial_health = 50.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_qyloj")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_771nn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_fgdhn")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.0
+offset_top = -45.0
+offset_right = 10.0
+offset_bottom = -37.0
+grow_horizontal = 2
+value = 100.0
+nine_patch_stretch = true
+texture_progress = SubResource("CanvasTexture_j0taw")
+
+[node name="Skeleton_Minion" parent="." instance=ExtResource("3_08g0q")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.964226, 0)
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

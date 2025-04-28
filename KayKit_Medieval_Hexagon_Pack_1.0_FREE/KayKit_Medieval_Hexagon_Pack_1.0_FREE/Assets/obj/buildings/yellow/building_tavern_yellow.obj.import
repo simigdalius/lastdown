@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bjixp1rs8qpjn"
+path="res://.godot/imported/building_tavern_yellow.obj-39928da5ed28e846d402cda391af15fa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_tavern_yellow.obj-39928da5ed28e846d402cda391af15fa.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/buildings/yellow/building_tavern_yellow.obj"
+dest_files=["res://.godot/imported/building_tavern_yellow.obj-39928da5ed28e846d402cda391af15fa.mesh", "res://.godot/imported/building_tavern_yellow.obj-39928da5ed28e846d402cda391af15fa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

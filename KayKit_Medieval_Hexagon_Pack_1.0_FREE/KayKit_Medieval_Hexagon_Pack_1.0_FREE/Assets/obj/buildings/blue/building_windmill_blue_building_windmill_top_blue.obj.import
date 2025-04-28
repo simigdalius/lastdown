@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://djyybadp35s88"
+path="res://.godot/imported/building_windmill_blue_building_windmill_top_blue.obj-49b3a36f72f6a51c0b961b2ebc5acb74.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_windmill_blue_building_windmill_top_blue.obj-49b3a36f72f6a51c0b961b2ebc5acb74.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/buildings/blue/building_windmill_blue_building_windmill_top_blue.obj"
+dest_files=["res://.godot/imported/building_windmill_blue_building_windmill_top_blue.obj-49b3a36f72f6a51c0b961b2ebc5acb74.mesh", "res://.godot/imported/building_windmill_blue_building_windmill_top_blue.obj-49b3a36f72f6a51c0b961b2ebc5acb74.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

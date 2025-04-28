@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dcebt7jlr5lys"
+path="res://.godot/imported/building_tower_base_yellow.obj-0239204586ae955ac75682659cf82354.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_tower_base_yellow.obj-0239204586ae955ac75682659cf82354.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/buildings/yellow/building_tower_base_yellow.obj"
+dest_files=["res://.godot/imported/building_tower_base_yellow.obj-0239204586ae955ac75682659cf82354.mesh", "res://.godot/imported/building_tower_base_yellow.obj-0239204586ae955ac75682659cf82354.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,14 @@
+CSGBox3D
+Node3D
+Timer
+RemoteTransform3D
+AnimationPlayer
+CollisionShape3D
+AnimatableBody3D
+PathFollow3D
+Path3D
+OmniLight3D
+SpotLight3D
+CSGSphere3D
+CSGMesh3D
+GridMap

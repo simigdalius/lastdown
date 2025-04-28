@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cc6rxhfxt0snw"
+path="res://.godot/imported/shrine_candles.obj-6a1f4828b05e927ed0a2bccb64c03af0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/shrine_candles.obj-6a1f4828b05e927ed0a2bccb64c03af0.mesh"]
+
+source_file="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/obj/shrine_candles.obj"
+dest_files=["res://.godot/imported/shrine_candles.obj-6a1f4828b05e927ed0a2bccb64c03af0.mesh", "res://.godot/imported/shrine_candles.obj-6a1f4828b05e927ed0a2bccb64c03af0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

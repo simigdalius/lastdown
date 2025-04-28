@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ce3hrw8332vg"
+path="res://.godot/imported/hex_grass.obj-fc42a1288de79144a9ee8b3f8071abdf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hex_grass.obj-fc42a1288de79144a9ee8b3f8071abdf.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/tiles/base/hex_grass.obj"
+dest_files=["res://.godot/imported/hex_grass.obj-fc42a1288de79144a9ee8b3f8071abdf.mesh", "res://.godot/imported/hex_grass.obj-fc42a1288de79144a9ee8b3f8071abdf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

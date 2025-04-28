@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kp3qxje4jdr4"
+path="res://.godot/imported/building_blacksmith_blue.obj-86c8e6dd9979114226b099115c8f1d0d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_blacksmith_blue.obj-86c8e6dd9979114226b099115c8f1d0d.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/buildings/blue/building_blacksmith_blue.obj"
+dest_files=["res://.godot/imported/building_blacksmith_blue.obj-86c8e6dd9979114226b099115c8f1d0d.mesh", "res://.godot/imported/building_blacksmith_blue.obj-86c8e6dd9979114226b099115c8f1d0d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

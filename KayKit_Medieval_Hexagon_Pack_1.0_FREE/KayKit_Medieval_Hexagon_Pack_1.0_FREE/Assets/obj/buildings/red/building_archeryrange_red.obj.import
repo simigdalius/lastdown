@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dgqixp00e6xye"
+path="res://.godot/imported/building_archeryrange_red.obj-15432381e2897ccf0218943003c11faa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_archeryrange_red.obj-15432381e2897ccf0218943003c11faa.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/buildings/red/building_archeryrange_red.obj"
+dest_files=["res://.godot/imported/building_archeryrange_red.obj-15432381e2897ccf0218943003c11faa.mesh", "res://.godot/imported/building_archeryrange_red.obj-15432381e2897ccf0218943003c11faa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

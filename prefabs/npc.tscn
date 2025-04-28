@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5rpeb1p7bxa4"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_3byt6"]
+[ext_resource type="PackedScene" uid="uid://cls3xmkvnub8c" path="res://animassets/npcskin.tscn" id="2_ht77k"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hi6d4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d53jp"]
+
+[node name="NPC" type="CharacterBody3D"]
+script = ExtResource("1_3byt6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_hi6d4")
+
+[node name="chatDetectionArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="chatDetectionArea"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("BoxShape3D_d53jp")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="npcskin" parent="." instance=ExtResource("2_ht77k")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxek5x8s3idxy"]
+
+[ext_resource type="PackedScene" uid="uid://bkxy2x48tnfb" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_foundation_allsides.gltf" id="1_pu03m"]
+
+[sub_resource type="Curve3D" id="Curve3D_i1jp6"]
+resource_local_to_scene = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e70h7"]
+size = Vector3(3.28613, 2.03052, 2.21509)
+
+[sub_resource type="Animation" id="Animation_h4cvf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1pwyo"]
+resource_name = "move"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u7846"]
+_data = {
+"RESET": SubResource("Animation_h4cvf"),
+"move": SubResource("Animation_1pwyo")
+}
+
+[node name="movingplatform" type="Path3D"]
+curve = SubResource("Curve3D_i1jp6")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+
+[node name="floor_foundation_allsides2" parent="AnimatableBody3D" instance=ExtResource("1_pu03m")]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00341797, 0.984253, -0.0220947)
+shape = SubResource("BoxShape3D_e70h7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody3D"]
+libraries = {
+"": SubResource("AnimationLibrary_u7846")
+}
+autoplay = "move"
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="PathFollow3D"]
+remote_path = NodePath("../../AnimatableBody3D")

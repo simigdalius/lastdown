@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://3bf5yc3cjjyu"
+path="res://.godot/imported/building_church_blue.obj-e75bb08a266cc5b32f638ae482c6a799.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_church_blue.obj-e75bb08a266cc5b32f638ae482c6a799.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/buildings/blue/building_church_blue.obj"
+dest_files=["res://.godot/imported/building_church_blue.obj-e75bb08a266cc5b32f638ae482c6a799.mesh", "res://.godot/imported/building_church_blue.obj-e75bb08a266cc5b32f638ae482c6a799.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

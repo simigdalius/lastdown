@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://gvd72s4rsfp"
+path="res://.godot/imported/building_lumbermill_green_building_lumbermill_saw_green.obj-29037aa91d498d90a1d83db33f074fd1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_lumbermill_green_building_lumbermill_saw_green.obj-29037aa91d498d90a1d83db33f074fd1.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/buildings/green/building_lumbermill_green_building_lumbermill_saw_green.obj"
+dest_files=["res://.godot/imported/building_lumbermill_green_building_lumbermill_saw_green.obj-29037aa91d498d90a1d83db33f074fd1.mesh", "res://.godot/imported/building_lumbermill_green_building_lumbermill_saw_green.obj-29037aa91d498d90a1d83db33f074fd1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

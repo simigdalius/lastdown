@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://iyddfeod5ps0"
+path="res://.godot/imported/bone_A.obj-ea5769f44911ddd378269cb9599292aa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bone_A.obj-ea5769f44911ddd378269cb9599292aa.mesh"]
+
+source_file="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/obj/bone_A.obj"
+dest_files=["res://.godot/imported/bone_A.obj-ea5769f44911ddd378269cb9599292aa.mesh", "res://.godot/imported/bone_A.obj-ea5769f44911ddd378269cb9599292aa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

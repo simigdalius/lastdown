@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://6l5lm0kgd0xe"
+path="res://.godot/imported/hex_river_B.obj-8ce151d78d29b0b442ce3957c41488d3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hex_river_B.obj-8ce151d78d29b0b442ce3957c41488d3.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/tiles/rivers/hex_river_B.obj"
+dest_files=["res://.godot/imported/hex_river_B.obj-8ce151d78d29b0b442ce3957c41488d3.mesh", "res://.godot/imported/hex_river_B.obj-8ce151d78d29b0b442ce3957c41488d3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

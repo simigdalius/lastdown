@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bm1cwc5uc4hgy"
+path="res://.godot/imported/lantern_standing.obj-2df3231dec6966301cd013567af550fd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lantern_standing.obj-2df3231dec6966301cd013567af550fd.mesh"]
+
+source_file="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/obj/lantern_standing.obj"
+dest_files=["res://.godot/imported/lantern_standing.obj-2df3231dec6966301cd013567af550fd.mesh", "res://.godot/imported/lantern_standing.obj-2df3231dec6966301cd013567af550fd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

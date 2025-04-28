@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqwo5212gq02k"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_3xr02"]
+[ext_resource type="PackedScene" uid="uid://cs4atsy375xoj" path="res://animassets/skeleton_mage.tscn" id="2_lkqe3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fbhhg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q02l3"]
+
+[node name="player" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_3xr02")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_fbhhg")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_q02l3")
+
+[node name="DashCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="dashtime" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Skeleton_Mage" parent="." instance=ExtResource("2_lkqe3")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.740124, 0)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="dashtime" to="." method="_on_dashtime_timeout"]

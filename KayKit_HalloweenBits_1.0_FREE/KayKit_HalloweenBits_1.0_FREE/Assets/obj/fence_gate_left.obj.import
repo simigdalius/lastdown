@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ca1c8tmm1m66q"
+path="res://.godot/imported/fence_gate_left.obj-220e0d46bca741a7a071cd6db93563bb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fence_gate_left.obj-220e0d46bca741a7a071cd6db93563bb.mesh"]
+
+source_file="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_gate_left.obj"
+dest_files=["res://.godot/imported/fence_gate_left.obj-220e0d46bca741a7a071cd6db93563bb.mesh", "res://.godot/imported/fence_gate_left.obj-220e0d46bca741a7a071cd6db93563bb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

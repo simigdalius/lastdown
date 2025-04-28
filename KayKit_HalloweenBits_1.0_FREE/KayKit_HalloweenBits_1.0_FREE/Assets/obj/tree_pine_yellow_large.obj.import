@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b4kcco3oq5230"
+path="res://.godot/imported/tree_pine_yellow_large.obj-c7626b3b4833db733ff9a090d278ca78.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree_pine_yellow_large.obj-c7626b3b4833db733ff9a090d278ca78.mesh"]
+
+source_file="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/obj/tree_pine_yellow_large.obj"
+dest_files=["res://.godot/imported/tree_pine_yellow_large.obj-c7626b3b4833db733ff9a090d278ca78.mesh", "res://.godot/imported/tree_pine_yellow_large.obj-c7626b3b4833db733ff9a090d278ca78.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b2iqp83swscax"
+path="res://.godot/imported/fence_wood_straight_gate.obj-27540b9c3c5fc8889b9fa28dbf6289de.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fence_wood_straight_gate.obj-27540b9c3c5fc8889b9fa28dbf6289de.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/buildings/neutral/fence_wood_straight_gate.obj"
+dest_files=["res://.godot/imported/fence_wood_straight_gate.obj-27540b9c3c5fc8889b9fa28dbf6289de.mesh", "res://.godot/imported/fence_wood_straight_gate.obj-27540b9c3c5fc8889b9fa28dbf6289de.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

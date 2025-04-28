@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bu56n1nhkk5c6"
+path="res://.godot/imported/wall_straight_gate_door_left.obj-e1e1823f05b5ff4bc4dc2fc71c337024.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_straight_gate_door_left.obj-e1e1823f05b5ff4bc4dc2fc71c337024.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/buildings/neutral/wall_straight_gate_door_left.obj"
+dest_files=["res://.godot/imported/wall_straight_gate_door_left.obj-e1e1823f05b5ff4bc4dc2fc71c337024.mesh", "res://.godot/imported/wall_straight_gate_door_left.obj-e1e1823f05b5ff4bc4dc2fc71c337024.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

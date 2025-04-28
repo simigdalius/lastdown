@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d1gdfap58hd55"
+path="res://.godot/imported/building_destroyed.obj-015a14eb62a7163b3f20ea31ccfea84d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_destroyed.obj-015a14eb62a7163b3f20ea31ccfea84d.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/buildings/neutral/building_destroyed.obj"
+dest_files=["res://.godot/imported/building_destroyed.obj-015a14eb62a7163b3f20ea31ccfea84d.mesh", "res://.godot/imported/building_destroyed.obj-015a14eb62a7163b3f20ea31ccfea84d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

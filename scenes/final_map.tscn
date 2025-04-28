@@ -1,0 +1,241 @@
+[gd_scene load_steps=26 format=3 uid="uid://b32pbo22f0n86"]
+
+[ext_resource type="Script" path="res://scripts/enemy_spawner.gd" id="1_61uaq"]
+[ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="1_jnbip"]
+[ext_resource type="PackedScene" uid="uid://dqwo5212gq02k" path="res://scenes/player.tscn" id="1_ycg7d"]
+[ext_resource type="PackedScene" uid="uid://nqtqjc8uspdc" path="res://prefabs/enemy.tscn" id="3_p4hnu"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="3_rovtc"]
+[ext_resource type="PackedScene" uid="uid://dufp77sdephg8" path="res://prefabs/bullet.tscn" id="4_8grvf"]
+[ext_resource type="Script" path="res://scripts/camera_3d.gd" id="4_apd5n"]
+[ext_resource type="Script" path="res://scripts/death_zone.gd" id="9_m7jwt"]
+[ext_resource type="PackedScene" uid="uid://bp3n11e1wfli1" path="res://UIscenes/pause_interface.tscn" id="9_o1nu0"]
+[ext_resource type="Script" path="res://scripts/backtoHub.gd" id="10_d81qj"]
+[ext_resource type="PackedScene" uid="uid://dxek5x8s3idxy" path="res://scenes/movingplatform.tscn" id="11_gblwy"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_rp47m"]
+vertices = PackedVector3Array(-24.5, 1, -24.5, -24.5, 1, 24.5, 24.5, 1, 24.5, 24.5, 1, -24.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_majq4"]
+albedo_color = Color(0.652715, 0.355336, 0.222247, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mcrww"]
+material = SubResource("StandardMaterial3D_majq4")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gf0ln"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_27bk0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd53r"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(4.13924e-06, 0.750768, 0.645654, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ya1r3"]
+material = SubResource("StandardMaterial3D_dd53r")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_la6sk"]
+size = Vector3(1, 0.351563, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_48w2u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jdajj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pcs7l"]
+size = Vector3(1, 1, 0.914063)
+
+[sub_resource type="Curve3D" id="Curve3D_0hjrv"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.275878, 0.621919, 12.8855, 0, 0, 0, 0, 0, 0, 0.00797033, 0.693146, 0.10239, 0, 0, 0, 0, 0, 0, 0.314105, 0.622065, 12.8973),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_4amuw"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.129834, 0.28366, 0.219561, 0, 0, 0, 0, 0, 0, 10.3632, 0.24703, -0.426731, 0, 0, 0, 0, 0, 0, -0.114909, 0.282685, 0.165092),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_5l2uu"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.374899, 0.0966263, -0.35812, 0, 0, 0, 0, 0, 0, 9.20641, 0.0849171, -0.307359, 0, 0, 0, 0, 0, 0, 0.486229, 0.593097, -2.14125),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[node name="finalMap" type="Node3D"]
+
+[node name="mapEnemy" type="Node3D" parent="."]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="mapEnemy"]
+navigation_mesh = SubResource("NavigationMesh_rp47m")
+
+[node name="floor" type="MeshInstance3D" parent="mapEnemy/NavigationRegion3D"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("BoxMesh_mcrww")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="mapEnemy/NavigationRegion3D/floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mapEnemy/NavigationRegion3D/floor/StaticBody3D"]
+shape = SubResource("BoxShape3D_gf0ln")
+
+[node name="EnemySpawner" type="Node3D" parent="mapEnemy" node_paths=PackedStringArray("root_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68714, 0)
+script = ExtResource("1_61uaq")
+enemy_prefab = ExtResource("3_p4hnu")
+root_node = NodePath("../..")
+spawn_rate = 0.9
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(0.866025, 0.353553, 0.353553, 0, 0.707107, -0.707107, -0.5, 0.612372, 0.612372, 0, 12.7, -11.1791)
+spring_length = -15.0
+script = ExtResource("1_jnbip")
+player = NodePath("../player")
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" groups=["camera"]]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("4_apd5n")
+max_shake = 0.15
+shake_fallof = 5.0
+
+[node name="player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_ycg7d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2115, 1.99412, -28.0749)
+camera = NodePath("../SpringArm3D/Camera3D")
+
+[node name="weapon" type="Node3D" parent="player" node_paths=PackedStringArray("root_node", "shoot_position")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.39142)
+script = ExtResource("3_rovtc")
+bullet_prefab = ExtResource("4_8grvf")
+root_node = NodePath("../..")
+shoot_position = NodePath("shootPosition")
+shoot_rate = 0.05
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/weapon"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, -1, -0.118352, 0, 0.646996)
+mesh = SubResource("BoxMesh_27bk0")
+
+[node name="shootPosition" type="Node3D" parent="player/weapon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.126122, 0.0961877, 0)
+
+[node name="muzzleFlash" type="Node3D" parent="player/weapon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.126122, 0.0961877, 0)
+visible = false
+
+[node name="OmniLight3D" type="OmniLight3D" parent="player/weapon/muzzleFlash"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00449771, -0.0961877, 0.184793)
+light_color = Color(0.911089, 0.843765, 0.455562, 1)
+light_energy = 1.5
+omni_range = 1.93566
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/weapon/muzzleFlash"]
+transform = Transform3D(-1.31134e-08, 0, 0.1, 0, 0.1, 0, -0.3, 0, -4.37114e-09, 0, -0.102474, -0.0056293)
+mesh = SubResource("QuadMesh_ya1r3")
+
+[node name="Timer" type="Timer" parent="player/weapon/muzzleFlash"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0505929, 0.998719, 0, -0.998719, -0.0505929, 0, 10.0362, -2.60757)
+
+[node name="enemy" parent="." instance=ExtResource("3_p4hnu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5885, 4.06693, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pauseInterface" parent="CanvasLayer" instance=ExtResource("9_o1nu0")]
+
+[node name="deathZone" type="Area3D" parent="."]
+script = ExtResource("9_m7jwt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="deathZone"]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0, -30.095, 0)
+shape = SubResource("BoxShape3D_la6sk")
+
+[node name="backToHub" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 10, -22.5358, 0, -29.9953)
+mesh = SubResource("BoxMesh_48w2u")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="backToHub"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00958109)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="backToHub/StaticBody3D"]
+shape = SubResource("BoxShape3D_jdajj")
+
+[node name="levelchangezone" type="Area3D" parent="."]
+script = ExtResource("10_d81qj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="levelchangezone"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -21.7478, 0, -33.8895)
+shape = SubResource("BoxShape3D_pcs7l")
+
+[node name="movingplats" type="Node3D" parent="."]
+
+[node name="movingplatform" parent="movingplats" instance=ExtResource("11_gblwy")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.1521, -2.81166, 26.6033)
+curve = SubResource("Curve3D_0hjrv")
+
+[node name="movingplatform2" parent="movingplats" instance=ExtResource("11_gblwy")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.17341, -2.40052, 52.2625)
+curve = SubResource("Curve3D_4amuw")
+
+[node name="movingplatform3" parent="movingplats" instance=ExtResource("11_gblwy")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 61.6856, 1.82664, 20.7706)
+curve = SubResource("Curve3D_5l2uu")
+
+[node name="map" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4456, -2.38548, 55.3901)
+use_collision = true
+size = Vector3(43.8182, 8.16345, 20.9547)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="map/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8626, 0.0999451, -5.17734)
+operation = 2
+size = Vector3(15.2451, 11.4488, 12.0924)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 48.1484, 3.20452, 39.3067)
+use_collision = true
+size = Vector3(3.56726, 1, 12.1885)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.1882, 2.5959, 21.4285)
+use_collision = true
+size = Vector3(18.2183, 6.19179, 24.5752)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.798, 2.5959, 21.4285)
+use_collision = true
+size = Vector3(18.2183, 6.19179, 24.5752)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.0681, 6.57759, -16.5326)
+use_collision = true
+size = Vector3(9.05664, 1, 50.868)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="map"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.9583, 6.57759, -37.4205)
+use_collision = true
+size = Vector3(9.05664, 1, 49.0995)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 0.951056, -0.309017, 0, 0.309017, 0.951056, 49.1549, 5.70742, 11.5457)
+size = Vector3(9.10156, 1, 6.26746)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9563, -0.0891562, -36.1709)
+size = Vector3(24.2539, 1.36414, 7.41254)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="map/CSGBox3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5201, 2.98666, -2.00869)
+size = Vector3(58.0355, 7.32336, 10.9395)
+
+[connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
+[connection signal="body_entered" from="levelchangezone" to="levelchangezone" method="_on_body_entered"]

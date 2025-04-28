@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d32d3jggrd61c"
+path="res://.godot/imported/hex_water.obj-f5526ae9d04acb1f7d1a916412d56971.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hex_water.obj-f5526ae9d04acb1f7d1a916412d56971.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/tiles/base/hex_water.obj"
+dest_files=["res://.godot/imported/hex_water.obj-f5526ae9d04acb1f7d1a916412d56971.mesh", "res://.godot/imported/hex_water.obj-f5526ae9d04acb1f7d1a916412d56971.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

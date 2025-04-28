@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d20e1bd1j5h0u"
+path="res://.godot/imported/building_windmill_green_building_windmill_top_green_building_windmill_top_fan_green.obj-fda32d0017f23c967a50ab81d77aec25.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_windmill_green_building_windmill_top_green_building_windmill_top_fan_green.obj-fda32d0017f23c967a50ab81d77aec25.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/buildings/green/building_windmill_green_building_windmill_top_green_building_windmill_top_fan_green.obj"
+dest_files=["res://.godot/imported/building_windmill_green_building_windmill_top_green_building_windmill_top_fan_green.obj-fda32d0017f23c967a50ab81d77aec25.mesh", "res://.godot/imported/building_windmill_green_building_windmill_top_green_building_windmill_top_fan_green.obj-fda32d0017f23c967a50ab81d77aec25.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

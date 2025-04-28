@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c46hj1ei0f560"
+path="res://.godot/imported/trees_B_large.obj-6e4f582626dd3c464f4652db79a0541b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/trees_B_large.obj-6e4f582626dd3c464f4652db79a0541b.mesh"]
+
+source_file="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/nature/trees_B_large.obj"
+dest_files=["res://.godot/imported/trees_B_large.obj-6e4f582626dd3c464f4652db79a0541b.mesh", "res://.godot/imported/trees_B_large.obj-6e4f582626dd3c464f4652db79a0541b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
