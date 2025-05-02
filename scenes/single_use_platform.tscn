@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://t704fbialdnh"]
+
+[ext_resource type="Script" path="res://scripts/single_use_platform.gd" id="1_q1mw0"]
+[ext_resource type="PackedScene" uid="uid://bv3jxwsbcgh3w" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_small_weeds_B.gltf" id="2_fdgox"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ipe8f"]
+size = Vector3(2.02527, 0.159191, 1.98828)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_757ox"]
+size = Vector3(1.90088, 0.24707, 1.92798)
+
+[node name="single_use_platform" type="StaticBody3D"]
+script = ExtResource("1_q1mw0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.512634, -0.0199033, 0.293945)
+shape = SubResource("BoxShape3D_ipe8f")
+
+[node name="floor_tile_small_weeds_B2" parent="." instance=ExtResource("2_fdgox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.521593, 0, 0.288059)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573551, 0.20908, 0.270142)
+shape = SubResource("BoxShape3D_757ox")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

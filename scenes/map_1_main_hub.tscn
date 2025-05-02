@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cyqnrh418bqk0"]
+[gd_scene load_steps=48 format=3 uid="uid://cyqnrh418bqk0"]
 
 [ext_resource type="PackedScene" uid="uid://dqwo5212gq02k" path="res://scenes/player.tscn" id="1_sbx65"]
 [ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="2_ux3em"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/death_zone.gd" id="5_xoqpc"]
 [ext_resource type="Script" path="res://scripts/finallevel.gd" id="6_mxtuw"]
 [ext_resource type="Script" path="res://scripts/giaarena.gd" id="7_8orld"]
+[ext_resource type="Script" path="res://scripts/levelchangezone_3.gd" id="8_3netl"]
 [ext_resource type="PackedScene" uid="uid://b5rpeb1p7bxa4" path="res://prefabs/npc.tscn" id="8_c0vp2"]
 [ext_resource type="PackedScene" uid="uid://jwo8x5aaaehs" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_doorway_sides.gltf" id="9_yimid"]
 [ext_resource type="PackedScene" uid="uid://dm8vb5ccnkp3w" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_wood_large_dark.gltf" id="10_3q54g"]
@@ -35,6 +36,8 @@
 [ext_resource type="PackedScene" uid="uid://d0k70oamghtru" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/keg_decorated.gltf" id="33_hgcry"]
 [ext_resource type="PackedScene" uid="uid://bcipi630ufyng" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/shelf_large.gltf" id="34_xd2f5"]
 [ext_resource type="PackedScene" uid="uid://dtdxnn441ptt2" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_window_closed_scaffold.gltf" id="35_7l8eq"]
+[ext_resource type="PackedScene" uid="uid://bcslj0a4jrkln" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/plate.gltf" id="35_srjeq"]
+[ext_resource type="PackedScene" uid="uid://cbeh8inc3inmm" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/candle_triple.gltf" id="36_744t4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eabfs"]
 size = Vector3(1, 0.351563, 1)
@@ -62,7 +65,7 @@ albedo_color = Color(0, 0, 0, 1)
 [node name="Map1mainHub" type="Node3D"]
 
 [node name="player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_sbx65")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56388, -12.0935)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.82222, 1.56388, -11.4702)
 camera = NodePath("../SpringArm3D/Camera3D")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="." node_paths=PackedStringArray("player")]
@@ -108,7 +111,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00958109)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="changeLevel2/StaticBody3D"]
 shape = SubResource("BoxShape3D_5lamb")
 
+[node name="changeLevel3" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 26.2849, 3.93644, -10.6647)
+mesh = SubResource("BoxMesh_mjma5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="changeLevel3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00958109)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="changeLevel3/StaticBody3D"]
+shape = SubResource("BoxShape3D_5lamb")
+
 [node name="levelchangezone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.25697)
 script = ExtResource("6_mxtuw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="levelchangezone"]
@@ -119,6 +133,14 @@ shape = SubResource("BoxShape3D_c3rd7")
 script = ExtResource("7_8orld")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="levelchangezone2"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 13.8915, 0.45737, 9.98853)
+shape = SubResource("BoxShape3D_n42ni")
+
+[node name="levelchangezone3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13995, 6.36268, -20.3897)
+script = ExtResource("8_3netl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="levelchangezone3"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 13.8915, 0.45737, 9.98853)
 shape = SubResource("BoxShape3D_n42ni")
 
@@ -715,6 +737,94 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.960
 [node name="wall_window_closed_scaffold2" parent="map" instance=ExtResource("35_7l8eq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.50486, 4.64051, 1.93619)
 
+[node name="plate2" parent="map" instance=ExtResource("35_srjeq")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, -7.07426, 0.632555, -11.7104)
+
+[node name="candle_triple2" parent="map/plate2" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, -0.478002, 0.0621742, -0.531776)
+
+[node name="candle_triple3" parent="map/plate2" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.458949, 0.145428, -0.531776)
+
+[node name="candle_triple4" parent="map/plate2" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, -0.25186, -0.171316, -0.497554)
+
+[node name="candle_triple5" parent="map/plate2" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.168103, -0.171316, -0.497554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="map/plate2"]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.0066514, 0.419681, 0.00307465)
+light_color = Color(0.929799, 0, 0.262511, 1)
+
+[node name="plate3" parent="map" instance=ExtResource("35_srjeq")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -3, 0.21586, 0.633588, 23.0894)
+
+[node name="candle_triple2" parent="map/plate3" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, -0.478002, 0.0621742, -0.531776)
+
+[node name="candle_triple3" parent="map/plate3" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.458949, 0.145428, -0.531776)
+
+[node name="candle_triple4" parent="map/plate3" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, -0.25186, -0.171316, -0.497554)
+
+[node name="candle_triple5" parent="map/plate3" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.168103, -0.171316, -0.497554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="map/plate3"]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.0066514, 0.419681, 0.00307465)
+light_color = Color(0, 0.913725, 1, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="map/plate3"]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.0402751, 0.670144, 0.00307465)
+light_color = Color(0, 0.913725, 1, 1)
+
+[node name="plate4" parent="map" instance=ExtResource("35_srjeq")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 1, 0, 2, 0, -8.74228e-08, 22.4496, 4.43952, -10.4936)
+
+[node name="candle_triple2" parent="map/plate4" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, -0.478002, 0.0621742, -0.531776)
+
+[node name="candle_triple3" parent="map/plate4" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.458949, 0.145428, -0.531776)
+
+[node name="candle_triple4" parent="map/plate4" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, -0.25186, -0.171316, -0.497554)
+
+[node name="candle_triple5" parent="map/plate4" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.168103, -0.171316, -0.497554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="map/plate4"]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.0066514, 0.419681, 0.00307465)
+light_color = Color(0, 0.913725, 1, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="map/plate4"]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.0402751, 0.670144, 0.00307465)
+light_color = Color(0, 0.913725, 1, 1)
+
+[node name="plate5" parent="map" instance=ExtResource("35_srjeq")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 1, 0, 2, 0, -8.74228e-08, 22.4496, 4.43952, -0.957749)
+
+[node name="candle_triple2" parent="map/plate5" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, -0.478002, 0.0621742, -0.531776)
+
+[node name="candle_triple3" parent="map/plate5" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.458949, 0.145428, -0.531776)
+
+[node name="candle_triple4" parent="map/plate5" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, -0.25186, -0.171316, -0.497554)
+
+[node name="candle_triple5" parent="map/plate5" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.168103, -0.171316, -0.497554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="map/plate5"]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.0066514, 0.419681, 0.00307465)
+light_color = Color(0, 0.913725, 1, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="map/plate5"]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.0402751, 0.670144, 0.00307465)
+light_color = Color(0, 0.913725, 1, 1)
+
 [node name="lights" type="Node3D" parent="."]
 
 [node name="torch_lit2" parent="lights" instance=ExtResource("21_6thn3")]
@@ -792,3 +902,5 @@ omni_range = 3.87752
 [connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
 [connection signal="body_entered" from="levelchangezone" to="levelchangezone" method="_on_body_entered"]
 [connection signal="body_entered" from="levelchangezone2" to="levelchangezone2" method="_on_body_entered"]
+[connection signal="body_entered" from="levelchangezone3" to="player" method="_on_levelchangezone_3_body_entered"]
+[connection signal="body_entered" from="levelchangezone3" to="levelchangezone3" method="_on_body_entered"]

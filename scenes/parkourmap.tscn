@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcvrhhlsyykfq"]
+
+[ext_resource type="PackedScene" uid="uid://t704fbialdnh" path="res://scenes/single_use_platform.tscn" id="1_2dmmn"]
+[ext_resource type="PackedScene" uid="uid://dqwo5212gq02k" path="res://scenes/player.tscn" id="1_r4rgb"]
+[ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="2_n76qw"]
+[ext_resource type="Script" path="res://scripts/camera_3d.gd" id="3_beyuv"]
+[ext_resource type="PackedScene" uid="uid://bp3n11e1wfli1" path="res://UIscenes/pause_interface.tscn" id="4_o1n7l"]
+
+[node name="parkourmap" type="Node3D"]
+
+[node name="map" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.23694, 0, -1.15771)
+use_collision = true
+size = Vector3(15.928, 1, 7.42285)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5829, 0, 19.6832)
+use_collision = true
+size = Vector3(15.928, 1, 7.55017)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5551, 0, 46.6126)
+use_collision = true
+size = Vector3(15.928, 1, 14.8044)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.4858, 0, 59.9677)
+use_collision = true
+size = Vector3(6.92151, 1, 8.11459)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.4858, 0, 89.7975)
+use_collision = true
+size = Vector3(6.92151, 1, 8.11459)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.2246, 0, 110.683)
+use_collision = true
+size = Vector3(21.7964, 1, 11.2536)
+
+[node name="single_use_platform" parent="map/CSGBox3D6" instance=ExtResource("1_2dmmn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.9284, 2.94607, -111.837)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.00168859, 0.999999, 0, -0.999999, -0.00168859, 5.15918, 12.1421, 10.7087)
+
+[node name="player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_r4rgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43185, 0)
+camera = NodePath("../SpringArm3D/Camera3D")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(0.866025, 0.353553, 0.353553, 0, 0.707106, -0.707107, -0.5, 0.612372, 0.612372, 0, 8.94675, -11)
+spring_length = -15.0
+script = ExtResource("2_n76qw")
+player = NodePath("../player")
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" groups=["camera"]]
+transform = Transform3D(-1, 2.98023e-07, -3.8743e-07, 2.98023e-08, 1, -3.8743e-07, 8.9407e-08, 0, -1, -5.14685, 4.70364, 7.90353)
+script = ExtResource("3_beyuv")
+max_shake = 0.15
+shake_fallof = 5.0
+
+[node name="pauseInterface" parent="." instance=ExtResource("4_o1n7l")]
