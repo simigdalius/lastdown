@@ -1,0 +1,2 @@
+inventoryData
+Resource

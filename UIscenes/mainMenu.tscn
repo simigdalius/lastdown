@@ -148,4 +148,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2maby")
 text = "exit"
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]

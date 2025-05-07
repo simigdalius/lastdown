@@ -1,7 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqwo5212gq02k"]
+[gd_scene load_steps=9 format=3 uid="uid://dqwo5212gq02k"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3xr02"]
 [ext_resource type="PackedScene" uid="uid://cs4atsy375xoj" path="res://animassets/skeleton_mage.tscn" id="2_lkqe3"]
+[ext_resource type="Script" path="res://UI/enemyUi.gd" id="3_jr04q"]
+[ext_resource type="PackedScene" uid="uid://vkf2c1daph5w" path="res://inventory/inventory.tscn" id="4_vp5ud"]
+[ext_resource type="Script" path="res://inventory/inventoryinterface.gd" id="5_kb4oh"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2g8su"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fbhhg"]
 
@@ -9,6 +14,37 @@
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_3xr02")
+initial_health = 50.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.216
+anchor_bottom = 0.062
+offset_left = -2.0
+offset_top = 63.0
+offset_right = 102.168
+offset_bottom = 22.824
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("3_jr04q")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.012
+anchor_right = 0.5
+anchor_bottom = 0.012
+offset_left = -60.236
+offset_top = -74.0
+offset_right = -140.5
+offset_bottom = -64.0
+grow_horizontal = 2
+value = 100.0
+nine_patch_stretch = true
+texture_progress = SubResource("CanvasTexture_2g8su")
+tint_under = Color(1, 0, 1, 1)
+tint_over = Color(1, 1, 0, 1)
+tint_progress = Color(1.15514e-06, 0.806952, 0.483136, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_fbhhg")
@@ -27,6 +63,22 @@ wait_time = 0.5
 
 [node name="Skeleton_Mage" parent="." instance=ExtResource("2_lkqe3")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.740124, 0)
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 645.0
+script = ExtResource("5_kb4oh")
+
+[node name="inventory" parent="Control2" instance=ExtResource("4_vp5ud")]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 222.0
+offset_bottom = 84.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

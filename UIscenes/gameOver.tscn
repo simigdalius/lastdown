@@ -1,6 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://blhpkut2n8wi"]
+[gd_scene load_steps=12 format=3 uid="uid://blhpkut2n8wi"]
 
 [ext_resource type="Script" path="res://UI/game_over.gd" id="1_y10lx"]
+[ext_resource type="Texture2D" uid="uid://ixf5lp7sbuea" path="res://gameover.png" id="2_t3dta"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvini"]
+texture = ExtResource("2_t3dta")
+modulate_color = Color(0.682353, 0.682353, 0.682353, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucgh2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcnt1"]
+bg_color = Color(0.560784, 0.333333, 0.313726, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v82s8"]
+bg_color = Color(0.976471, 0.529412, 0.521569, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w15k7"]
+bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6354n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtxg3"]
+bg_color = Color(0.560784, 0.333333, 0.313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hw86l"]
+bg_color = Color(0.976471, 0.529412, 0.521569, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayww5"]
+bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
 
 [node name="Control" type="Control"]
 process_mode = 3
@@ -12,14 +63,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y10lx")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.25098, 0.25098, 0.25098, 0.705882)
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_xvini")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -38,15 +86,31 @@ theme_override_constants/v_separation = 8
 
 [node name="Label" type="Label" parent="GridContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.427451, 0.0745098, 0.105882, 1)
+theme_override_colors/font_outline_color = Color(0.427451, 0.0745098, 0.105882, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
 theme_override_font_sizes/font_size = 32
 text = "GAME OVER"
 
 [node name="retry" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ucgh2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mcnt1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v82s8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w15k7")
 text = "Retry"
 
 [node name="quit" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6354n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rtxg3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hw86l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ayww5")
 text = "Quit"
 
 [connection signal="pressed" from="GridContainer/retry" to="." method="_on_retry_pressed"]

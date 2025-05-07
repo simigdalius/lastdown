@@ -9,10 +9,24 @@ var is_alive : bool = true
 
 @export var dash_speed = 30
 var can_dash = true
-var SPEED = 5.0
+var SPEED = 10.0
 
 var jumpCount = 0
 var maxjumps = 3
+
+@export var inventory_data: inventoryData
+
+@export
+var initial_health : float
+
+var current_health : float
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	current_health = initial_health
+	$Control/TextureProgressBar.max_value = initial_health
+
+
 
 #oti afora to movement
 func _physics_process(delta: float) -> void:
@@ -66,7 +80,9 @@ func _physics_process(delta: float) -> void:
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("enemy"):
 		is_alive = false
-		if is_alive == false: 
+		current_health -=10
+		$Control/TextureProgressBar.value = current_health
+		if current_health == 0: 
 			get_tree().change_scene_to_file("res://UIscenes/gameOver.tscn")
 		
 

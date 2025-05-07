@@ -1,0 +1,134 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5m0k7v3kyyqp"]
+
+[ext_resource type="Texture2D" uid="uid://riihmplja6kp" path="res://options.png" id="1_mmi21"]
+[ext_resource type="Script" path="res://UI/options.gd" id="1_pmxce"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wk83h"]
+texture = ExtResource("1_mmi21")
+modulate_color = Color(0.683077, 0.683077, 0.683077, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2vmxy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82dns"]
+bg_color = Color(0.560719, 0.333253, 0.312962, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dkdq"]
+bg_color = Color(0.976471, 0.529412, 0.521569, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwyil"]
+bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bucpt"]
+bg_color = Color(0.560784, 0.333333, 0.313726, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_617ts"]
+bg_color = Color(0.976471, 0.529412, 0.521569, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ky1qn"]
+bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="options" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pmxce")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wk83h")
+
+[node name="lastDOWN" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.035
+anchor_bottom = 0.395
+offset_left = -248.0
+offset_top = 24.0
+offset_right = -376.32
+offset_bottom = -143.96
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.427451, 0.0745098, 0.105882, 1)
+theme_override_colors/font_outline_color = Color(0.427451, 0.0745098, 0.105882, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 60
+text = "Options"
+horizontal_alignment = 1
+
+[node name="BACKTOMAINMENU" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1089.0
+offset_top = 4.0
+offset_right = 1143.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2vmxy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_82dns")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6dkdq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mwyil")
+text = "X"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 320.0
+offset_top = 128.0
+offset_right = 576.0
+offset_bottom = 576.0
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "screen size"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 576.0
+offset_top = 128.0
+offset_right = 832.0
+offset_bottom = 576.0
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_bucpt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_617ts")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ky1qn")
+
+[connection signal="pressed" from="BACKTOMAINMENU" to="." method="_on_backtomainmenu_pressed"]

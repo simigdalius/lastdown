@@ -46,14 +46,9 @@ text = "Paused"
 layout_mode = 2
 text = "Resume"
 
-[node name="Options" type="Button" parent="GridContainer"]
-layout_mode = 2
-text = "Options"
-
 [node name="Quit" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "Quit"
 
 [connection signal="pressed" from="GridContainer/resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="GridContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="GridContainer/Quit" to="." method="_on_quit_pressed"]

@@ -16,8 +16,20 @@ script = ExtResource("1_q1mw0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.512634, -0.0199033, 0.293945)
 shape = SubResource("BoxShape3D_ipe8f")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11133, 0)
+light_color = Color(1, 0, 0, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11133, 0)
+light_color = Color(1, 0, 0, 1)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11133, 0)
+light_color = Color(1, 0, 0, 1)
+
 [node name="floor_tile_small_weeds_B2" parent="." instance=ExtResource("2_fdgox")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.521593, 0, 0.288059)
+transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 1, 0.521593, -0.194419, 0.288059)
 
 [node name="Area3D" type="Area3D" parent="."]
 
@@ -27,8 +39,5 @@ shape = SubResource("BoxShape3D_757ox")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Timer2" type="Timer" parent="."]
-
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
