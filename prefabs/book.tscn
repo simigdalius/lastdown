@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://n1fpmt6arblg"]
+
+[ext_resource type="Script" path="res://book.gd" id="1_4k430"]
+[ext_resource type="PackedScene" uid="uid://x6p11jjbry4h" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/box_small.gltf" id="2_h65xa"]
+[ext_resource type="PackedScene" uid="uid://byr82rapea4qq" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/coin.gltf" id="3_clcd3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uaant"]
+radius = 0.92682
+
+[node name="book" type="Node3D"]
+script = ExtResource("1_4k430")
+
+[node name="box_small2" parent="." instance=ExtResource("2_h65xa")]
+transform = Transform3D(1.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="coin2" parent="box_small2" instance=ExtResource("3_clcd3")]
+transform = Transform3D(0.666667, 0, 0, 0, 2, 0, 0, 0, 1, -0.0340463, 0.846952, 0.00669336)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.474777, 0)
+shape = SubResource("SphereShape3D_uaant")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

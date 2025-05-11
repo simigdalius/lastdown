@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://broi27bnpq2xq"]
+
+[ext_resource type="Script" path="res://scripts/inventory.gd" id="1_fshmh"]
+[ext_resource type="Texture2D" uid="uid://c6q27pbsdwkt6" path="res://itemicons/keyIcon.png" id="2_5vnvj"]
+[ext_resource type="Texture2D" uid="uid://cev4yqb22fyo8" path="res://itemicons/healthpotion.png" id="3_4njr5"]
+[ext_resource type="Texture2D" uid="uid://cxiefjhnnsruu" path="res://itemicons/bookicon.png" id="4_mv5t1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pam3s"]
+texture = ExtResource("2_5vnvj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_li52y"]
+texture = ExtResource("3_4njr5")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dww6u"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_umf8d"]
+texture = ExtResource("4_mv5t1")
+
+[node name="inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fshmh")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 72.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_pam3s")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 16.0
+offset_right = 136.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_li52y")
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 1
+offset_right = 16.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_dww6u")
+text = "Q"
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 16.0
+offset_right = 200.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_umf8d")
+
+[node name="Label" type="Label" parent="Panel3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "	1"
+
+[node name="noitem" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 72.0
+offset_bottom = 72.0
+
+[node name="noitem2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 16.0
+offset_right = 136.0
+offset_bottom = 72.0
+
+[node name="noitem3" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 16.0
+offset_right = 200.0
+offset_bottom = 72.0

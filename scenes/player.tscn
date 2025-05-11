@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqwo5212gq02k"]
+[gd_scene load_steps=8 format=3 uid="uid://dqwo5212gq02k"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3xr02"]
 [ext_resource type="PackedScene" uid="uid://cs4atsy375xoj" path="res://animassets/skeleton_mage.tscn" id="2_lkqe3"]
 [ext_resource type="Script" path="res://UI/enemyUi.gd" id="3_jr04q"]
-[ext_resource type="PackedScene" uid="uid://vkf2c1daph5w" path="res://inventory/inventory.tscn" id="4_vp5ud"]
-[ext_resource type="Script" path="res://inventory/inventoryinterface.gd" id="5_kb4oh"]
+[ext_resource type="PackedScene" uid="uid://broi27bnpq2xq" path="res://UIscenes/inventory.tscn" id="4_3go7p"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_2g8su"]
 
@@ -64,21 +63,7 @@ wait_time = 0.5
 [node name="Skeleton_Mage" parent="." instance=ExtResource("2_lkqe3")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.740124, 0)
 
-[node name="Control2" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 645.0
-script = ExtResource("5_kb4oh")
-
-[node name="inventory" parent="Control2" instance=ExtResource("4_vp5ud")]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 4.0
-offset_right = 222.0
-offset_bottom = 84.0
-size_flags_horizontal = 8
-size_flags_vertical = 0
+[node name="inventory" parent="." instance=ExtResource("4_3go7p")]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

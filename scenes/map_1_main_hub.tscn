@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cyqnrh418bqk0"]
+[gd_scene load_steps=64 format=3 uid="uid://cyqnrh418bqk0"]
 
 [ext_resource type="PackedScene" uid="uid://dqwo5212gq02k" path="res://scenes/player.tscn" id="1_sbx65"]
 [ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="2_ux3em"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/finallevel.gd" id="6_mxtuw"]
 [ext_resource type="Script" path="res://scripts/giaarena.gd" id="7_8orld"]
 [ext_resource type="Script" path="res://scripts/levelchangezone_3.gd" id="8_3netl"]
+[ext_resource type="Script" path="res://scripts/tothebossfight.gd" id="8_264uk"]
 [ext_resource type="PackedScene" uid="uid://b5rpeb1p7bxa4" path="res://prefabs/npc.tscn" id="8_c0vp2"]
 [ext_resource type="PackedScene" uid="uid://jwo8x5aaaehs" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_doorway_sides.gltf" id="9_yimid"]
 [ext_resource type="PackedScene" uid="uid://dm8vb5ccnkp3w" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_wood_large_dark.gltf" id="10_3q54g"]
@@ -50,6 +51,9 @@
 [ext_resource type="PackedScene" uid="uid://blewndy5y1e4b" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_archeryrange_red.gltf" id="48_usdbp"]
 [ext_resource type="PackedScene" uid="uid://euxynrobsek7" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_market_red.gltf" id="49_rrq53"]
 [ext_resource type="PackedScene" uid="uid://dwk8bdbr8k1ie" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_lumbermill_red.gltf" id="50_k28mp"]
+[ext_resource type="PackedScene" uid="uid://dtwoceamxk04r" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_open_scaffold.gltf" id="51_63oi8"]
+[ext_resource type="PackedScene" uid="uid://cw3fjnuleo1fq" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_corner.gltf" id="53_6q8e2"]
+[ext_resource type="PackedScene" uid="uid://n1fpmt6arblg" path="res://prefabs/book.tscn" id="54_0y1l3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eabfs"]
 size = Vector3(1, 0.351563, 1)
@@ -123,19 +127,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00958109)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="changeLevel3/StaticBody3D"]
 shape = SubResource("BoxShape3D_5lamb")
 
-[node name="levelchangezone" type="Area3D" parent="."]
+[node name="keylevel" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.25697)
 script = ExtResource("6_mxtuw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="levelchangezone"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="keylevel"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.664782, 0, 26.7968)
 shape = SubResource("BoxShape3D_c3rd7")
 
-[node name="levelchangezone3" type="Area3D" parent="."]
+[node name="minirushlevel" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13995, 6.36268, -20.3897)
 script = ExtResource("8_3netl")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="levelchangezone3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="minirushlevel"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 13.8915, 0.45737, 9.98853)
+shape = SubResource("BoxShape3D_n42ni")
+
+[node name="tothebossfight" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14242, 0.139491, 9.58651)
+script = ExtResource("8_264uk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tothebossfight"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 13.8915, 0.45737, 9.98853)
 shape = SubResource("BoxShape3D_n42ni")
 
@@ -1101,16 +1113,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19028, 3.15694, 21.6872)
 light_color = Color(1, 0.768627, 0.431373, 1)
 omni_range = 3.87752
 
-[node name="wall_doorway_scaffold2" parent="." instance=ExtResource("12_ftolu")]
-transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 10.6461, 0.5, 10.2966)
-
 [node name="tothe boss" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.71542, 2.06417, 0.289073)
 script = ExtResource("7_8orld")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tothe boss"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 13.8915, 0.45737, 9.98853)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 13.3422, 0.45737, 9.98853)
 shape = SubResource("BoxShape3D_n42ni")
+
+[node name="wall_doorway_scaffold2" parent="tothe boss" instance=ExtResource("12_ftolu")]
+transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 13.3615, -1.56417, 10.0075)
+
+[node name="bosswall" type="CSGBox3D" parent="tothe boss"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8319, 0.507324, 10.0145)
+use_collision = true
+size = Vector3(1, 4.35059, 3.21545)
 
 [node name="background" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -73.2598)
@@ -4958,9 +4975,153 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.856,
 [node name="building_lumbermill_red2" parent="background/building_castle_red2" instance=ExtResource("50_k28mp")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.856, 0.226975, -3.56196)
 
+[node name="wall_open_scaffold2" parent="background" instance=ExtResource("51_63oi8")]
+transform = Transform3D(-5.68248e-08, 0, 1, 0, 1.3, 0, -1.3, 0, -4.37114e-08, 10.3895, 0.552259, 83.6219)
+
+[node name="wall_doorway_Tsplit2" parent="." instance=ExtResource("22_8obof")]
+transform = Transform3D(-5.68248e-08, 0, 1, 0, 1.3, 0, -1.3, 0, -4.37114e-08, 10.6282, 0.409957, 10.2595)
+
+[node name="throneroom" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1535, 0, 12.7837)
+use_collision = true
+size = Vector3(13.2425, 1, 19.6677)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="throneroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.636086, 1.89253, 8.05327)
+size = Vector3(14.8064, 4.55054, 0.217285)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="throneroom"]
+transform = Transform3D(1, 0, 0, 0, 0.999575, -0.0291603, 0, 0.0291603, 0.999575, -3.8771, 6.30434, -10.5411)
+size = Vector3(17.9859, 4.55054, 0.001)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="throneroom"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.71186, 1.89253, -1.14998)
+size = Vector3(18.6264, 4.55054, 0.217285)
+
+[node name="plate3" parent="throneroom" instance=ExtResource("35_srjeq")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -3, -0.260067, 0.529218, 5.9366)
+
+[node name="candle_triple2" parent="throneroom/plate3" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, -0.478002, 0.0621742, -0.531776)
+
+[node name="candle_triple3" parent="throneroom/plate3" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.458949, 0.145428, -0.531776)
+
+[node name="candle_triple4" parent="throneroom/plate3" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, -0.25186, -0.171316, -0.497554)
+
+[node name="candle_triple5" parent="throneroom/plate3" instance=ExtResource("36_744t4")]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.168103, -0.171316, -0.497554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="throneroom/plate3"]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.0066514, 0.419681, 0.00307465)
+light_color = Color(0, 0.913725, 1, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="throneroom/plate3"]
+transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.0402751, 0.670144, 0.00307465)
+light_color = Color(0, 0.913725, 1, 1)
+
+[node name="wall2" parent="throneroom" instance=ExtResource("27_188fe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.15937, 0.616681, 7.94462)
+
+[node name="wall4" parent="throneroom/wall2" instance=ExtResource("27_188fe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.91986, 0, 0)
+
+[node name="wall3" parent="throneroom/wall2" instance=ExtResource("27_188fe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99452, 0, 0)
+
+[node name="wall5" parent="throneroom/wall2" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.8527, 0, -3.90079)
+
+[node name="wall8" parent="throneroom/wall2" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.8527, 0, -15.531)
+
+[node name="wall6" parent="throneroom/wall2" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.8527, 0, -7.87732)
+
+[node name="wall7" parent="throneroom/wall2" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.8527, 0, -11.6494)
+
+[node name="wall9" parent="throneroom/wall2" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.83574, -0.173726, -15.531)
+
+[node name="wall10" parent="throneroom/wall2" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.83574, -0.173726, -5.29808)
+
+[node name="wall11" parent="throneroom/wall2" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.83574, -0.173726, -1.25018)
+
+[node name="wall_corner2" parent="throneroom/wall2" instance=ExtResource("53_6q8e2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.8943, -0.0223436, 0.0733452)
+
+[node name="floor_wood_large_dark2" parent="throneroom/wall2" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.60486, -0.116681, -2.16227)
+
+[node name="floor_wood_large_dark5" parent="throneroom/wall2/floor_wood_large_dark2" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.86484, 0, 0)
+
+[node name="floor_wood_large_dark4" parent="throneroom/wall2/floor_wood_large_dark2/floor_wood_large_dark5" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96, 0, 0)
+
+[node name="floor_wood_large_dark3" parent="throneroom/wall2/floor_wood_large_dark2/floor_wood_large_dark5/floor_wood_large_dark4" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89767, 0, 0)
+
+[node name="floor_wood_large_dark3" parent="throneroom/wall2" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.60486, -0.116681, -6.11838)
+
+[node name="floor_wood_large_dark5" parent="throneroom/wall2/floor_wood_large_dark3" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.86484, 0, 0)
+
+[node name="floor_wood_large_dark4" parent="throneroom/wall2/floor_wood_large_dark3/floor_wood_large_dark5" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96, 0, 0)
+
+[node name="floor_wood_large_dark3" parent="throneroom/wall2/floor_wood_large_dark3/floor_wood_large_dark5/floor_wood_large_dark4" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89767, 0, 0)
+
+[node name="floor_wood_large_dark4" parent="throneroom/wall2" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.60486, -0.116681, -10.0979)
+
+[node name="floor_wood_large_dark5" parent="throneroom/wall2/floor_wood_large_dark4" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.86484, 0, 0)
+
+[node name="floor_wood_large_dark4" parent="throneroom/wall2/floor_wood_large_dark4/floor_wood_large_dark5" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96, 0, 0)
+
+[node name="floor_wood_large_dark3" parent="throneroom/wall2/floor_wood_large_dark4/floor_wood_large_dark5/floor_wood_large_dark4" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89767, 0, 0)
+
+[node name="floor_wood_large_dark5" parent="throneroom/wall2" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.60486, -0.116681, -14.0982)
+
+[node name="floor_wood_large_dark5" parent="throneroom/wall2/floor_wood_large_dark5" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.86484, 0, 0)
+
+[node name="floor_wood_large_dark4" parent="throneroom/wall2/floor_wood_large_dark5/floor_wood_large_dark5" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96, 0, 0)
+
+[node name="floor_wood_large_dark3" parent="throneroom/wall2/floor_wood_large_dark5/floor_wood_large_dark5/floor_wood_large_dark4" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89767, 0, 0)
+
+[node name="floor_wood_large_dark6" parent="throneroom/wall2" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.60486, -0.116681, -18.093)
+
+[node name="floor_wood_large_dark5" parent="throneroom/wall2/floor_wood_large_dark6" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.86484, 0, 0)
+
+[node name="floor_wood_large_dark4" parent="throneroom/wall2/floor_wood_large_dark6/floor_wood_large_dark5" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96, 0, 0)
+
+[node name="floor_wood_large_dark3" parent="throneroom/wall2/floor_wood_large_dark6/floor_wood_large_dark5/floor_wood_large_dark4" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89767, 0, 0)
+
+[node name="book" parent="." instance=ExtResource("54_0y1l3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45125, 9.49636)
+
 [connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
-[connection signal="body_entered" from="levelchangezone" to="levelchangezone" method="_on_body_entered"]
-[connection signal="body_entered" from="levelchangezone3" to="player" method="_on_levelchangezone_3_body_entered"]
-[connection signal="body_entered" from="levelchangezone3" to="levelchangezone3" method="_on_body_entered"]
+[connection signal="body_entered" from="keylevel" to="keylevel" method="_on_body_entered"]
+[connection signal="body_entered" from="minirushlevel" to="player" method="_on_levelchangezone_3_body_entered"]
+[connection signal="body_entered" from="minirushlevel" to="minirushlevel" method="_on_body_entered"]
+[connection signal="body_entered" from="tothebossfight" to="player" method="_on_levelchangezone_3_body_entered"]
+[connection signal="body_entered" from="tothebossfight" to="tothebossfight" method="_on_body_entered"]
 [connection signal="body_entered" from="tothe boss" to="player" method="_on_levelchangezone_3_body_entered"]
 [connection signal="body_entered" from="tothe boss" to="tothe boss" method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://b32pbo22f0n86"]
+[gd_scene load_steps=76 format=3 uid="uid://b32pbo22f0n86"]
 
 [ext_resource type="Script" path="res://scripts/enemy_spawner.gd" id="1_61uaq"]
 [ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="1_jnbip"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://scripts/death_zone.gd" id="9_m7jwt"]
 [ext_resource type="PackedScene" uid="uid://bp3n11e1wfli1" path="res://UIscenes/pause_interface.tscn" id="9_o1nu0"]
 [ext_resource type="Script" path="res://scripts/backtoHub.gd" id="10_d81qj"]
-[ext_resource type="PackedScene" uid="uid://dxek5x8s3idxy" path="res://scenes/movingplatform.tscn" id="11_gblwy"]
 [ext_resource type="PackedScene" uid="uid://hbk2y1toelr0" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_wood_large.gltf" id="12_1qvur"]
 [ext_resource type="PackedScene" uid="uid://dm8vb5ccnkp3w" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_wood_large_dark.gltf" id="12_qyvvt"]
 [ext_resource type="PackedScene" uid="uid://dqfs0q7e1s4f3" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/pillar_decorated.gltf" id="12_w54ri"]
@@ -41,7 +40,6 @@
 [ext_resource type="PackedScene" uid="uid://dqwg3hjop7gmr" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_half_endcap_sloped.gltf" id="39_rqdqh"]
 [ext_resource type="PackedScene" uid="uid://pv04ssjsj01f" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_sloped.gltf" id="40_yth5k"]
 [ext_resource type="PackedScene" uid="uid://besmefn8hh3em" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_window_open.gltf" id="41_5go0e"]
-[ext_resource type="PackedScene" uid="uid://17tccr08une" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/chest_gold.gltf" id="42_2io5e"]
 [ext_resource type="PackedScene" uid="uid://cc3uym1le3aji" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/coin_stack_medium.gltf" id="43_nu1pi"]
 [ext_resource type="PackedScene" uid="uid://d25v13qwtmiop" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/stairs_narrow.gltf" id="44_7j8tk"]
 [ext_resource type="PackedScene" uid="uid://c8qh8ee87dbjp" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/table_long_tablecloth.gltf" id="45_infse"]
@@ -60,29 +58,31 @@
 [ext_resource type="PackedScene" uid="uid://blewndy5y1e4b" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_archeryrange_red.gltf" id="58_wf0cd"]
 [ext_resource type="PackedScene" uid="uid://euxynrobsek7" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_market_red.gltf" id="59_572jb"]
 [ext_resource type="PackedScene" uid="uid://dwk8bdbr8k1ie" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_lumbermill_red.gltf" id="60_wd2ct"]
+[ext_resource type="PackedScene" uid="uid://7ng858dw7u0d" path="res://prefabs/key.tscn" id="61_717uf"]
+[ext_resource type="PackedScene" uid="uid://t704fbialdnh" path="res://scenes/single_use_platform.tscn" id="61_rnyox"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_rp47m"]
 vertices = PackedVector3Array(-24.5, 1, -24.5, -24.5, 1, 24.5, 24.5, 1, 24.5, 24.5, 1, -24.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_majq4"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bb4mf"]
 albedo_color = Color(0.652715, 0.355336, 0.222247, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mcrww"]
-material = SubResource("StandardMaterial3D_majq4")
+material = SubResource("StandardMaterial3D_bb4mf")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gf0ln"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_27bk0"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd53r"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo7kb"]
 transparency = 1
 albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
 emission = Color(4.13924e-06, 0.750768, 0.645654, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ya1r3"]
-material = SubResource("StandardMaterial3D_dd53r")
+material = SubResource("StandardMaterial3D_eo7kb")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_la6sk"]
 size = Vector3(1, 0.351563, 1)
@@ -93,30 +93,6 @@ size = Vector3(1, 0.351563, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pcs7l"]
 size = Vector3(1, 1, 0.914063)
-
-[sub_resource type="Curve3D" id="Curve3D_0hjrv"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.275878, 0.621919, 12.8855, 0, 0, 0, 0, 0, 0, 0.00797033, 0.693146, 0.10239, 0, 0, 0, 0, 0, 0, 0.314105, 0.622065, 12.8973),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
-
-[sub_resource type="Curve3D" id="Curve3D_4amuw"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.129834, 0.28366, 0.219561, 0, 0, 0, 0, 0, 0, 10.3632, 0.24703, -0.426731, 0, 0, 0, 0, 0, 0, -0.114909, 0.282685, 0.165092),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
-
-[sub_resource type="Curve3D" id="Curve3D_u50ej"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.129834, 0.28366, 0.219561, 0, 0, 0, 0, 0, 0, 10.3632, 0.24703, -0.426731, 0, 0, 0, 0, 0, 0, -0.114909, 0.282685, 0.165092),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_487b0"]
 albedo_color = Color(0, 0, 0, 1)
@@ -131,6 +107,9 @@ albedo_color = Color(0, 0, 0, 1)
 albedo_color = Color(0.321728, 0.321728, 0.321728, 1)
 
 [node name="finalMap" type="Node3D"]
+
+[node name="key" parent="." instance=ExtResource("61_717uf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 101.547, 6.67256, 22.5996)
 
 [node name="mapEnemy" type="Node3D" parent="."]
 
@@ -254,20 +233,6 @@ script = ExtResource("10_d81qj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="levelchangezone"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -21.7478, 0, -33.8895)
 shape = SubResource("BoxShape3D_pcs7l")
-
-[node name="movingplats" type="Node3D" parent="."]
-
-[node name="movingplatform" parent="movingplats" instance=ExtResource("11_gblwy")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.1521, -2.81166, 26.6033)
-curve = SubResource("Curve3D_0hjrv")
-
-[node name="movingplatform2" parent="movingplats" instance=ExtResource("11_gblwy")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.17341, -2.20884, 48.2798)
-curve = SubResource("Curve3D_4amuw")
-
-[node name="movingplatform3" parent="movingplats" instance=ExtResource("11_gblwy")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 61.2677, 1.53489, 20.5289)
-curve = SubResource("Curve3D_u50ej")
 
 [node name="map" type="Node3D" parent="."]
 
@@ -3189,9 +3154,6 @@ light_color = Color(0, 0.698926, 0.797233, 1)
 [node name="OmniLight3D3" type="OmniLight3D" parent="mapassets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.376, 10.7498, 17.6409)
 light_color = Color(0, 0.698926, 0.797233, 1)
-
-[node name="chest_gold2" parent="mapassets" instance=ExtResource("42_2io5e")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 103.944, 5.6918, 22.4969)
 
 [node name="coin_stack_medium2" parent="mapassets" instance=ExtResource("43_nu1pi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.452, 5.57812, 21.337)
@@ -7080,6 +7042,80 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.856,
 
 [node name="building_lumbermill_red2" parent="background/building_castle_red2" instance=ExtResource("60_wd2ct")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.856, 0.226975, -3.56196)
+
+[node name="singleplatform" type="Node3D" parent="."]
+
+[node name="single_use_platform" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60378, 0, 30.4955)
+
+[node name="single_use_platform2" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57174, 0, 30.4955)
+
+[node name="single_use_platform3" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57174, 0, 32.4912)
+
+[node name="single_use_platform4" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56395, 0, 32.4912)
+
+[node name="single_use_platform5" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60378, 0, 34.4595)
+
+[node name="single_use_platform6" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57174, 0, 34.4595)
+
+[node name="single_use_platform7" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57174, 0, 36.4552)
+
+[node name="single_use_platform8" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56395, 0, 36.4552)
+
+[node name="single_use_platform9" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60378, 0, 38.4102)
+
+[node name="single_use_platform10" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57174, 0, 38.4102)
+
+[node name="single_use_platform11" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57174, 0, 40.4058)
+
+[node name="single_use_platform12" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56395, 0, 40.4058)
+
+[node name="single_use_platform13" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60378, 0, 47.3943)
+
+[node name="single_use_platform14" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57174, 0, 47.3943)
+
+[node name="single_use_platform15" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57174, 0, 49.39)
+
+[node name="single_use_platform16" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56395, 0, 49.39)
+
+[node name="single_use_platform17" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 72.664, 6.38564, 17.6099)
+
+[node name="single_use_platform18" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 70.6968, 6.43904, 17.6099)
+
+[node name="single_use_platform19" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 70.6968, 6.43904, 19.6056)
+
+[node name="single_use_platform20" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 72.7038, 6.38456, 19.6056)
+
+[node name="single_use_platform21" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 72.664, 6.38564, 21.651)
+
+[node name="single_use_platform22" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 70.6968, 6.43904, 21.651)
+
+[node name="single_use_platform23" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 70.6968, 6.43904, 23.6467)
+
+[node name="single_use_platform24" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 72.7038, 6.38456, 23.6467)
 
 [connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
 [connection signal="body_entered" from="levelchangezone" to="levelchangezone" method="_on_body_entered"]

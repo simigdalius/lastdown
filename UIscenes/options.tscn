@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c5m0k7v3kyyqp"]
+[gd_scene load_steps=13 format=3 uid="uid://c5m0k7v3kyyqp"]
 
 [ext_resource type="Texture2D" uid="uid://riihmplja6kp" path="res://options.png" id="1_mmi21"]
 [ext_resource type="Script" path="res://UI/options.gd" id="1_pmxce"]
@@ -33,6 +33,8 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 5
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xxn1"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bucpt"]
 bg_color = Color(0.560784, 0.333333, 0.313726, 1)
 corner_radius_top_left = 16
@@ -48,6 +50,14 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ky1qn"]
+bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rer4u"]
 bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -93,6 +103,29 @@ theme_override_font_sizes/font_size = 60
 text = "Options"
 horizontal_alignment = 1
 
+[node name="lastDOWN2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.528
+anchor_top = 0.469
+anchor_right = 1.049
+anchor_bottom = 0.778
+offset_left = -280.256
+offset_top = -87.912
+offset_right = -392.448
+offset_bottom = -200.144
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.427451, 0.0745098, 0.105882, 1)
+theme_override_colors/font_outline_color = Color(0.427451, 0.0745098, 0.105882, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 60
+text = "Controls"
+horizontal_alignment = 1
+
 [node name="BACKTOMAINMENU" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1089.0
@@ -118,6 +151,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "screen size"
 
+[node name="Label2" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "volume"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 offset_left = 576.0
@@ -127,8 +165,81 @@ offset_bottom = 576.0
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4xxn1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bucpt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_617ts")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ky1qn")
+alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_rer4u")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 320.0
+offset_right = 477.0
+offset_bottom = 451.0
+
+[node name="Label" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "move"
+
+[node name="Label2" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "jump"
+
+[node name="Label3" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "dash"
+
+[node name="Label4" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "shoot"
+
+[node name="Label5" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "interact
+"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 320.0
+offset_right = 741.0
+offset_bottom = 451.0
+
+[node name="Label" type="Label" parent="VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "W,A,S,D"
+
+[node name="Label2" type="Label" parent="VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "SPACE"
+
+[node name="Label3" type="Label" parent="VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "RIGHT CLICK"
+
+[node name="Label4" type="Label" parent="VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "LEFT CLICK"
+
+[node name="Label5" type="Label" parent="VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "E
+"
 
 [connection signal="pressed" from="BACKTOMAINMENU" to="." method="_on_backtomainmenu_pressed"]
+[connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]

@@ -9,12 +9,12 @@ var is_alive : bool = true
 
 @export var dash_speed = 30
 var can_dash = true
-var SPEED = 10.0
+var SPEED = 12.0
 
 var jumpCount = 0
 var maxjumps = 3
 
-@export var inventory_data: inventoryData
+
 
 @export
 var initial_health : float
@@ -25,11 +25,19 @@ var current_health : float
 func _ready() -> void:
 	current_health = initial_health
 	$Control/TextureProgressBar.max_value = initial_health
+	
+func _process(delta):
+	if Global.potion:
+		if Input.is_action_pressed("Q"):
+			current_health += 25
+			Global.potion = 0
+			$Control/TextureProgressBar.value = current_health
 
 
 
 #oti afora to movement
 func _physics_process(delta: float) -> void:
+	
 	#gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -96,4 +104,5 @@ func dash():
 	$dashtime.start()
 #posh wra phgainei san bolida
 func _on_dashtime_timeout() -> void:
-	SPEED = 5
+	SPEED = 12
+	

@@ -97,7 +97,7 @@ material = SubResource("StandardMaterial3D_ashoq")
 [node name="enemyboss" parent="." instance=ExtResource("9_thbng")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.87445, -2.0568)
 script = SubResource("GDScript_2wokm")
-move_speed = 13.0
+move_speed = 10.0
 initial_health = 1000.0
 
 [node name="Skeleton_Warrior" parent="enemyboss" instance=ExtResource("2_40v48")]
