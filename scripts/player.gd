@@ -33,6 +33,15 @@ func _process(delta):
 			Global.potion = 0
 			$Control/TextureProgressBar.value = current_health
 
+func _on_area_3d_body_entered(body):
+		if body.is_in_group("enemy"):
+			is_alive = false
+			current_health -=10
+		$Control/TextureProgressBar.value = current_health
+		if current_health == 0: 
+			get_tree().change_scene_to_file("res://UIscenes/gameOver.tscn")
+		
+
 
 
 #oti afora to movement
@@ -85,13 +94,13 @@ func _physics_process(delta: float) -> void:
 		look_at(ray_result.position)
 
 #otan mas akoumpaei to enemy na pethainei
-func _on_area_3d_body_entered(body):
-	if body.is_in_group("enemy"):
-		is_alive = false
-		current_health -=10
-		$Control/TextureProgressBar.value = current_health
-		if current_health == 0: 
-			get_tree().change_scene_to_file("res://UIscenes/gameOver.tscn")
+#func _on_area_3d_body_entered(body):
+	#if body.is_in_group("enemy"):
+	#	is_alive = false
+	#	current_health -=10
+	#	$Control/TextureProgressBar.value = current_health
+	#	if current_health == 0: 
+	#		get_tree().change_scene_to_file("res://UIscenes/gameOver.tscn")
 		
 
 
@@ -100,8 +109,9 @@ func _on_dash_cooldown_timeout() -> void:
 	can_dash = true
 
 func dash():
-	SPEED = SPEED + dash_speed
-	$dashtime.start()
+	if Global.book_found:
+		SPEED = SPEED + dash_speed
+		$dashtime.start()
 #posh wra phgainei san bolida
 func _on_dashtime_timeout() -> void:
 	SPEED = 12

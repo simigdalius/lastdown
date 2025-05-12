@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://n1fpmt6arblg"]
 
-[ext_resource type="Script" path="res://book.gd" id="1_4k430"]
+[ext_resource type="Script" path="res://scripts/book.gd" id="1_4k430"]
 [ext_resource type="PackedScene" uid="uid://x6p11jjbry4h" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/box_small.gltf" id="2_h65xa"]
 [ext_resource type="PackedScene" uid="uid://byr82rapea4qq" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/coin.gltf" id="3_clcd3"]
 

@@ -61,12 +61,6 @@ offset_right = 200.0
 offset_bottom = 72.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_umf8d")
 
-[node name="Label" type="Label" parent="Panel3"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "	1"
-
 [node name="noitem" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 16.0

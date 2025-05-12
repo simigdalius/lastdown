@@ -208,6 +208,12 @@ size_flags_horizontal = 4
 text = "interact
 "
 
+[node name="Label6" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Use potion
+"
+
 [node name="VBoxContainer4" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 680.0
@@ -239,6 +245,12 @@ text = "LEFT CLICK"
 layout_mode = 2
 size_flags_horizontal = 4
 text = "E
+"
+
+[node name="Label6" type="Label" parent="VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Q
 "
 
 [connection signal="pressed" from="BACKTOMAINMENU" to="." method="_on_backtomainmenu_pressed"]

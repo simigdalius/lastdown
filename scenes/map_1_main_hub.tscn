@@ -53,7 +53,7 @@
 [ext_resource type="PackedScene" uid="uid://dwk8bdbr8k1ie" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_lumbermill_red.gltf" id="50_k28mp"]
 [ext_resource type="PackedScene" uid="uid://dtwoceamxk04r" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_open_scaffold.gltf" id="51_63oi8"]
 [ext_resource type="PackedScene" uid="uid://cw3fjnuleo1fq" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_corner.gltf" id="53_6q8e2"]
-[ext_resource type="PackedScene" uid="uid://n1fpmt6arblg" path="res://prefabs/book.tscn" id="54_0y1l3"]
+[ext_resource type="Script" path="res://scripts/tothebook.gd" id="55_d4qsh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eabfs"]
 size = Vector3(1, 0.351563, 1)
@@ -1131,6 +1131,7 @@ size = Vector3(1, 4.35059, 3.21545)
 
 [node name="background" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -73.2598)
+visible = false
 
 [node name="hills_B_trees6" parent="background" instance=ExtResource("39_10rtx")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -12.0761, -27.9366, -3.83151)
@@ -5114,8 +5115,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96, 0, 0)
 [node name="floor_wood_large_dark3" parent="throneroom/wall2/floor_wood_large_dark6/floor_wood_large_dark5/floor_wood_large_dark4" instance=ExtResource("10_3q54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89767, 0, 0)
 
-[node name="book" parent="." instance=ExtResource("54_0y1l3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45125, 9.49636)
+[node name="tothebook" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6841, 6.06419, -27.8432)
+script = ExtResource("55_d4qsh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tothebook"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.664782, 0, 26.7968)
+shape = SubResource("BoxShape3D_c3rd7")
 
 [connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
 [connection signal="body_entered" from="keylevel" to="keylevel" method="_on_body_entered"]
@@ -5125,3 +5131,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45125, 9.49636)
 [connection signal="body_entered" from="tothebossfight" to="tothebossfight" method="_on_body_entered"]
 [connection signal="body_entered" from="tothe boss" to="player" method="_on_levelchangezone_3_body_entered"]
 [connection signal="body_entered" from="tothe boss" to="tothe boss" method="_on_body_entered"]
+[connection signal="body_entered" from="tothebook" to="tothebook" method="_on_body_entered"]
