@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cyqnrh418bqk0"]
+[gd_scene load_steps=65 format=3 uid="uid://cyqnrh418bqk0"]
 
 [ext_resource type="PackedScene" uid="uid://dqwo5212gq02k" path="res://scenes/player.tscn" id="1_sbx65"]
 [ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="2_ux3em"]
@@ -55,18 +55,27 @@
 [ext_resource type="PackedScene" uid="uid://cw3fjnuleo1fq" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_corner.gltf" id="53_6q8e2"]
 [ext_resource type="Script" path="res://scripts/tothebook.gd" id="55_d4qsh"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d6ji8"]
+sky_top_color = Color(0.452273, 0.522414, 0.760129, 1)
+sky_horizon_color = Color(0.613068, 0.630603, 0.690032, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.613068, 0.630603, 0.690032, 1)
+
+[sub_resource type="Sky" id="Sky_7blsx"]
+sky_material = SubResource("ProceduralSkyMaterial_d6ji8")
+
+[sub_resource type="Environment" id="Environment_kp7cx"]
+background_mode = 2
+sky = SubResource("Sky_7blsx")
+tonemap_mode = 2
+glow_enabled = true
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_eabfs"]
 size = Vector3(1, 0.351563, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_t83sf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5lamb"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nba24"]
-albedo_color = Color(0.403903, 8.42288e-07, 9.62615e-08, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_mjma5"]
-material = SubResource("StandardMaterial3D_nba24")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c3rd7"]
 
@@ -79,6 +88,9 @@ albedo_color = Color(0, 0, 0, 1)
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="Map1mainHub" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kp7cx")
 
 [node name="player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_sbx65")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.82222, 1.56388, -11.4702)
@@ -115,16 +127,6 @@ mesh = SubResource("BoxMesh_t83sf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00958109)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="changeLevel/StaticBody3D"]
-shape = SubResource("BoxShape3D_5lamb")
-
-[node name="changeLevel3" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 26.2849, 3.93644, -10.6647)
-mesh = SubResource("BoxMesh_mjma5")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="changeLevel3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00958109)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="changeLevel3/StaticBody3D"]
 shape = SubResource("BoxShape3D_5lamb")
 
 [node name="keylevel" type="Area3D" parent="."]
@@ -182,6 +184,9 @@ size = Vector3(1.5657, 0.943481, 1)
 
 [node name="floor_wood_large_dark2" parent="map" instance=ExtResource("10_3q54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.276703, 0.5, 4.2974)
+
+[node name="floor_wood_large_dark71" parent="map" instance=ExtResource("10_3q54g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3909, 0.5, 9.78871)
 
 [node name="floor_wood_large_dark3" parent="map" instance=ExtResource("10_3q54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.276703, 0.5, 8.30073)
@@ -1039,6 +1044,16 @@ light_color = Color(0, 0.913725, 1, 1)
 transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.0402751, 0.670144, 0.00307465)
 light_color = Color(0, 0.913725, 1, 1)
 
+[node name="CSGBox3D4" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6297, 5.2806, -0.802209)
+use_collision = true
+size = Vector3(3.61914, 0.139526, 1.89691)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="map"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.38766, 1.14788, -3.87026)
+use_collision = true
+size = Vector3(3.86719, 0.139526, 1.89691)
+
 [node name="lights" type="Node3D" parent="."]
 
 [node name="torch_lit2" parent="lights" instance=ExtResource("21_6thn3")]
@@ -1102,6 +1117,7 @@ transform = Transform3D(1, 0, 0, 0, 0.910684, 0.413104, 0, -0.413104, 0.910684, 
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="lights"]
 transform = Transform3D(1, 0, 0, 0, -0.00168859, 0.999999, 0, -0.999999, -0.00168859, 5.15918, 12.1421, 10.7087)
+visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.85429, 3.15694, 22.1697)
@@ -1131,7 +1147,6 @@ size = Vector3(1, 4.35059, 3.21545)
 
 [node name="background" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -73.2598)
-visible = false
 
 [node name="hills_B_trees6" parent="background" instance=ExtResource("39_10rtx")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -12.0761, -27.9366, -3.83151)

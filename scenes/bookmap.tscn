@@ -1,10 +1,11 @@
-[gd_scene load_steps=45 format=3 uid="uid://cnoktiruuwenx"]
+[gd_scene load_steps=49 format=3 uid="uid://cnoktiruuwenx"]
 
 [ext_resource type="PackedScene" uid="uid://nqtqjc8uspdc" path="res://prefabs/enemy.tscn" id="2_jabvq"]
 [ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="3_tnbnj"]
 [ext_resource type="Script" path="res://scripts/camera_3d.gd" id="4_4c3aj"]
 [ext_resource type="PackedScene" uid="uid://dqwo5212gq02k" path="res://scenes/player.tscn" id="5_uf8mj"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="6_6ahi0"]
+[ext_resource type="PackedScene" uid="uid://dp0c5f6jeb04p" path="res://characterAssets/assets/gltf/Skeleton_Staff.gltf" id="6_oyhbx"]
 [ext_resource type="PackedScene" uid="uid://dufp77sdephg8" path="res://prefabs/bullet.tscn" id="7_xgi2s"]
 [ext_resource type="Script" path="res://scripts/backtoHub.gd" id="8_n2f8l"]
 [ext_resource type="PackedScene" uid="uid://bcslj0a4jrkln" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/plate.gltf" id="9_a3cpl"]
@@ -19,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://4lsss1lxxp77" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_scaffold.gltf" id="16_i7qpc"]
 [ext_resource type="PackedScene" uid="uid://fvg7xebu5sem" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/nature/mountain_C_grass_trees.gltf" id="16_xtcep"]
 [ext_resource type="PackedScene" uid="uid://dnm2jje50uujf" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_castle_red.gltf" id="17_ocx7c"]
+[ext_resource type="PackedScene" uid="uid://ce2tr6ldldfu1" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_wood_small_dark.gltf" id="17_tdb4w"]
 [ext_resource type="PackedScene" uid="uid://d4ku4p6vxi2k7" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_church_red.gltf" id="18_hxikx"]
 [ext_resource type="PackedScene" uid="uid://7xgr5ehgb2xj" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_tavern_red.gltf" id="19_4cue0"]
 [ext_resource type="PackedScene" uid="uid://cany0u1wbcol5" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_watermill_red.gltf" id="20_fr3k1"]
@@ -29,7 +31,20 @@
 [ext_resource type="PackedScene" uid="uid://euxynrobsek7" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_market_red.gltf" id="25_vt0bh"]
 [ext_resource type="PackedScene" uid="uid://dwk8bdbr8k1ie" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_lumbermill_red.gltf" id="26_o33ws"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_imupi"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2nisq"]
+sky_top_color = Color(0.422716, 0.265048, 1, 1)
+sky_horizon_color = Color(0.605679, 0.566262, 0.75, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.605679, 0.566262, 0.75, 1)
+
+[sub_resource type="Sky" id="Sky_f7wmh"]
+sky_material = SubResource("ProceduralSkyMaterial_2nisq")
+
+[sub_resource type="Environment" id="Environment_gl1v1"]
+background_mode = 2
+sky = SubResource("Sky_f7wmh")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd53r"]
 transparency = 1
@@ -116,6 +131,9 @@ point_count = 3
 
 [node name="bookmap" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gl1v1")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0505929, 0.998719, 0, -0.998719, -0.0505929, 17.6707, 13.5909, 0.814781)
 
@@ -136,16 +154,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2115, 1.99412, 2.75337)
 camera = NodePath("../SpringArm3D/Camera3D")
 
 [node name="weapon" type="Node3D" parent="player" node_paths=PackedStringArray("root_node", "shoot_position")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.39142)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.491102, 0, -1.39142)
 script = ExtResource("6_6ahi0")
 bullet_prefab = ExtResource("7_xgi2s")
 root_node = NodePath("../..")
 shoot_position = NodePath("shootPosition")
 shoot_rate = 0.05
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player/weapon"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, -1, -0.118352, 0, 0.646996)
-mesh = SubResource("BoxMesh_imupi")
 
 [node name="shootPosition" type="Node3D" parent="player/weapon"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.126122, 0.0961877, 0)
@@ -166,6 +180,9 @@ mesh = SubResource("QuadMesh_318c6")
 
 [node name="Timer" type="Timer" parent="player/weapon/muzzleFlash"]
 
+[node name="Skeleton_Staff2" parent="player/weapon" instance=ExtResource("6_oyhbx")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0703716, 0.00798094, 1.24436)
+
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(0.984808, -0.173648, 0, 0.173648, 0.984808, 0, 0, 0, 1, 35.7248, 1.7, 0)
 use_collision = true
@@ -176,11 +193,11 @@ transform = Transform3D(0.984811, 0.173649, 0, -0.173649, 0.984811, 0, 0, 0, 1, 
 size = Vector3(6.10504, 0.637146, 7.44041)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(0.984811, 0.173649, 0, -0.173649, 0.984811, 0, 0, 0, 1, 47.7014, -7.88461, 0.40728)
-size = Vector3(6.42255, 4.5304, 9.96088)
+transform = Transform3D(0.984811, 0.173649, 0, -0.173649, 0.984811, 0, 0, 0, 1, 47.7014, -7.88461, 0.484314)
+size = Vector3(6.42255, 4.5304, 7.83519)
 
 [node name="levelchangezone" type="Area3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 96.8293, 5.67991, 20.0842)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 96.8293, 5.67991, 19.2973)
 script = ExtResource("8_n2f8l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="levelchangezone"]
@@ -188,7 +205,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -21.7478, 0, -33.8895)
 shape = SubResource("BoxShape3D_hcqqy")
 
 [node name="plate3" parent="." instance=ExtResource("9_a3cpl")]
-transform = Transform3D(-1.31134e-07, 0, -3, 0, 1, 0, 3, 0, -1.31134e-07, 86.049, 4.79403, 3.26586)
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 1, 0, 3, 0, -1.31134e-07, 86.049, 4.56773, 2.30307)
 
 [node name="candle_triple2" parent="plate3" instance=ExtResource("10_tb2ee")]
 transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, -0.478002, 0.0621742, -0.531776)
@@ -1091,6 +1108,54 @@ transform = Transform3D(1.5, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 50.2
 
 [node name="wall_scaffold3" parent="assets" instance=ExtResource("16_i7qpc")]
 transform = Transform3D(-1.5, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 1.31134e-07, -1, 4.37114e-08, 50.2099, 4.33399, 0.00685787)
+
+[node name="wall_scaffold4" parent="assets" instance=ExtResource("16_i7qpc")]
+transform = Transform3D(-8.74228e-08, 0, 1, 0, 1.3, 0, -2, 0, -4.37114e-08, 81.0879, -0.562791, 0.474203)
+
+[node name="wall_scaffold5" parent="assets" instance=ExtResource("16_i7qpc")]
+transform = Transform3D(-8.74228e-08, 0, 1, 0, 1.3, 0, -2, 0, -4.37114e-08, 87.4399, -0.562791, 0.474203)
+
+[node name="wall_scaffold6" parent="assets" instance=ExtResource("16_i7qpc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.3, 0, 0, 0, 1, 84.1934, -0.562791, -3.03206)
+
+[node name="wall_scaffold7" parent="assets" instance=ExtResource("16_i7qpc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.3, 0, 0, 0, 1, 84.1934, -0.562791, 4.30415)
+
+[node name="floor_wood_small_dark2" parent="assets" instance=ExtResource("17_tdb4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.4795, 4.48364, -1.76732)
+
+[node name="floor_wood_small_dark3" parent="assets" instance=ExtResource("17_tdb4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.4576, 4.48364, -1.76732)
+
+[node name="floor_wood_small_dark4" parent="assets" instance=ExtResource("17_tdb4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.46, 4.48364, -1.76732)
+
+[node name="floor_wood_small_dark5" parent="assets" instance=ExtResource("17_tdb4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.4795, 4.48364, 0.229525)
+
+[node name="floor_wood_small_dark6" parent="assets" instance=ExtResource("17_tdb4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.4576, 4.48364, 0.229525)
+
+[node name="floor_wood_small_dark7" parent="assets" instance=ExtResource("17_tdb4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.46, 4.48364, 0.229525)
+
+[node name="floor_wood_small_dark8" parent="assets" instance=ExtResource("17_tdb4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.4795, 4.48364, 2.19401)
+
+[node name="floor_wood_small_dark9" parent="assets" instance=ExtResource("17_tdb4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.4576, 4.48364, 2.19401)
+
+[node name="floor_wood_small_dark10" parent="assets" instance=ExtResource("17_tdb4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.46, 4.48364, 2.19401)
+
+[node name="floor_wood_small_dark11" parent="assets" instance=ExtResource("17_tdb4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.4795, 4.48364, 3.2498)
+
+[node name="floor_wood_small_dark12" parent="assets" instance=ExtResource("17_tdb4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.4576, 4.48364, 3.2498)
+
+[node name="floor_wood_small_dark13" parent="assets" instance=ExtResource("17_tdb4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.46, 4.48364, 3.2498)
 
 [node name="background" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.5298)

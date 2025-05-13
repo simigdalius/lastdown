@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://b32pbo22f0n86"]
+[gd_scene load_steps=79 format=3 uid="uid://b32pbo22f0n86"]
 
 [ext_resource type="Script" path="res://scripts/enemy_spawner.gd" id="1_61uaq"]
 [ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="1_jnbip"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/camera_3d.gd" id="4_apd5n"]
 [ext_resource type="Script" path="res://scripts/death_zone.gd" id="9_m7jwt"]
 [ext_resource type="PackedScene" uid="uid://bp3n11e1wfli1" path="res://UIscenes/pause_interface.tscn" id="9_o1nu0"]
+[ext_resource type="PackedScene" uid="uid://dp0c5f6jeb04p" path="res://characterAssets/assets/gltf/Skeleton_Staff.gltf" id="9_v3vwl"]
 [ext_resource type="Script" path="res://scripts/backtoHub.gd" id="10_d81qj"]
 [ext_resource type="PackedScene" uid="uid://hbk2y1toelr0" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_wood_large.gltf" id="12_1qvur"]
 [ext_resource type="PackedScene" uid="uid://dm8vb5ccnkp3w" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_wood_large_dark.gltf" id="12_qyvvt"]
@@ -61,6 +62,21 @@
 [ext_resource type="PackedScene" uid="uid://7ng858dw7u0d" path="res://prefabs/key.tscn" id="61_717uf"]
 [ext_resource type="PackedScene" uid="uid://t704fbialdnh" path="res://scenes/single_use_platform.tscn" id="61_rnyox"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kmcb8"]
+sky_top_color = Color(0.385751, 0.0013854, 0.914582, 1)
+sky_horizon_color = Color(0.596438, 0.500346, 0.728645, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.596438, 0.500346, 0.728645, 1)
+
+[sub_resource type="Sky" id="Sky_pxdcn"]
+sky_material = SubResource("ProceduralSkyMaterial_kmcb8")
+
+[sub_resource type="Environment" id="Environment_lye6d"]
+background_mode = 2
+sky = SubResource("Sky_pxdcn")
+tonemap_mode = 2
+glow_enabled = true
+
 [sub_resource type="NavigationMesh" id="NavigationMesh_rp47m"]
 vertices = PackedVector3Array(-24.5, 1, -24.5, -24.5, 1, 24.5, 24.5, 1, 24.5, 24.5, 1, -24.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
@@ -72,8 +88,6 @@ albedo_color = Color(0.652715, 0.355336, 0.222247, 1)
 material = SubResource("StandardMaterial3D_jyu3b")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gf0ln"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_27bk0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo7kb"]
 transparency = 1
@@ -107,6 +121,9 @@ albedo_color = Color(0, 0, 0, 1)
 albedo_color = Color(0.321728, 0.321728, 0.321728, 1)
 
 [node name="finalMap" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lye6d")
 
 [node name="key" parent="." instance=ExtResource("61_717uf")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 101.547, 6.67256, 22.5996)
@@ -169,16 +186,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2115, 1.99412, -28.0749)
 camera = NodePath("../SpringArm3D/Camera3D")
 
 [node name="weapon" type="Node3D" parent="player" node_paths=PackedStringArray("root_node", "shoot_position")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.39142)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52198, 0, -1.39142)
 script = ExtResource("3_rovtc")
 bullet_prefab = ExtResource("4_8grvf")
 root_node = NodePath("../..")
 shoot_position = NodePath("shootPosition")
 shoot_rate = 0.05
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player/weapon"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, -1, -0.118352, 0, 0.646996)
-mesh = SubResource("BoxMesh_27bk0")
 
 [node name="shootPosition" type="Node3D" parent="player/weapon"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.126122, 0.0961877, 0)
@@ -198,6 +211,9 @@ transform = Transform3D(-1.31134e-08, 0, 0.1, 0, 0.1, 0, -0.3, 0, -4.37114e-09, 
 mesh = SubResource("QuadMesh_ya1r3")
 
 [node name="Timer" type="Timer" parent="player/weapon/muzzleFlash"]
+
+[node name="Skeleton_Staff2" parent="player/weapon" instance=ExtResource("9_v3vwl")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0703716, 0.00798094, 1.24436)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0505929, 0.998719, 0, -0.998719, -0.0505929, 17.6707, 10.0362, 30.9645)
@@ -421,6 +437,24 @@ size = Vector3(4.97705, 4.16211, 2.94519)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.733124, 5.58818, 10.3423)
 operation = 2
 size = Vector3(4.97705, 4.16211, 2.94519)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.008, 2.57459, 55.1491)
+use_collision = true
+size = Vector3(0.520996, 1.04395, 5.34937)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 46.5818, 4.05531, 39.4535)
+use_collision = true
+size = Vector3(0.290771, 1.04395, 12.243)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 49.729, 4.05531, 39.4535)
+use_collision = true
+size = Vector3(0.290771, 1.04395, 12.243)
+
+[node name="wall2" parent="map" instance=ExtResource("14_rt84n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9351, -0.862343, 54.1153)
 
 [node name="mapassets" type="Node3D" parent="."]
 

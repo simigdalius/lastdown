@@ -1,12 +1,10 @@
+res://scenes/bookmap.tscn
 res://scenes/player.tscn
 res://prefabs/book.tscn
-res://scenes/bookmap.tscn
 res://UIscenes/inventory.tscn
 res://scenes/final_map.tscn
-res://scripts/player.gd
-res://scripts/inventory.gd
 res://scenes/map_1_main_hub.tscn
-res://scripts/tothebook.gd
 res://scenes/parkourmap.tscn
-res://scripts/weapon.gd
 res://UIscenes/options.tscn
+res://scenes/boss_arena.tscn
+res://UIscenes/gameOver.tscn
