@@ -1,9 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://tjagijt6xt5n"]
+[gd_scene load_steps=8 format=3 uid="uid://tjagijt6xt5n"]
 
 [ext_resource type="Script" path="res://scripts/healthpotion.gd" id="1_1pvlr"]
 [ext_resource type="PackedScene" uid="uid://c6ke4cs15i50i" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/bottle_C_brown.gltf" id="2_gw30n"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bk4fl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8w00"]
+bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5m8a0"]
+bg_color = Color(0.560784, 0.333333, 0.313726, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojb4t"]
+bg_color = Color(0.976471, 0.529412, 0.521569, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cv8mf"]
+bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
 
 [node name="healthpotion" type="Node3D"]
 script = ExtResource("1_1pvlr")
@@ -16,4 +49,38 @@ script = ExtResource("1_1pvlr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.443643, 0)
 shape = SubResource("SphereShape3D_bk4fl")
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Panel4" type="Panel" parent="Control"]
+offset_left = 320.0
+offset_top = 520.0
+offset_right = 832.0
+offset_bottom = 632.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d8w00")
+
+[node name="Label" type="Label" parent="Control/Panel4"]
+layout_mode = 1
+offset_top = 16.0
+offset_right = 497.0
+offset_bottom = 139.0
+text = "You now have the health potion to heal yourself. 
+You can only use it once. To use it press Q."
+horizontal_alignment = 1
+
+[node name="button5" type="Button" parent="Control/Panel4"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 70.0
+offset_right = 320.0
+offset_bottom = 101.0
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_5m8a0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_ojb4t")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_cv8mf")
+text = "OK"
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="pressed" from="Control/Panel4/button5" to="." method="_on_button_5_pressed"]

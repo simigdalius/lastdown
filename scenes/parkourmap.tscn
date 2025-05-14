@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/camera_3d.gd" id="3_beyuv"]
 [ext_resource type="PackedScene" uid="uid://bp3n11e1wfli1" path="res://UIscenes/pause_interface.tscn" id="4_o1n7l"]
 [ext_resource type="Script" path="res://scripts/death_zone.gd" id="6_yfmom"]
-[ext_resource type="Script" path="res://scripts/backtoHub.gd" id="7_28iu4"]
+[ext_resource type="Script" path="res://scripts/mainhub.gd" id="7_2ibbp"]
 [ext_resource type="PackedScene" uid="uid://bcslj0a4jrkln" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/plate.gltf" id="8_13q0c"]
 [ext_resource type="PackedScene" uid="uid://cbeh8inc3inmm" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/candle_triple.gltf" id="9_6jwng"]
 [ext_resource type="PackedScene" uid="uid://chrtp5sekqbvs" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/nature/hills_B_trees.gltf" id="10_uk0dp"]
@@ -530,7 +530,7 @@ shape = SubResource("BoxShape3D_e63qu")
 
 [node name="levelchangezone" type="Area3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42.0808, 1.21566, 127.189)
-script = ExtResource("7_28iu4")
+script = ExtResource("7_2ibbp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="levelchangezone"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -21.7478, 0, -24.7745)
@@ -4722,4 +4722,5 @@ light_color = Color(1, 0, 0, 1)
 [connection signal="body_entered" from="deathZone/deathZone2" to="deathZone/deathZone2" method="_on_body_entered"]
 [connection signal="body_entered" from="deathZone/deathZone3" to="deathZone/deathZone3" method="_on_body_entered"]
 [connection signal="body_entered" from="deathZone/deathZone4" to="deathZone/deathZone4" method="_on_body_entered"]
+[connection signal="body_entered" from="levelchangezone" to="map/CSGBox3D6/single_use_platform" method="_on_levelchangezone_body_entered"]
 [connection signal="body_entered" from="levelchangezone" to="levelchangezone" method="_on_body_entered"]

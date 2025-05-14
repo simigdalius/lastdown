@@ -1,9 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://7ng858dw7u0d"]
+[gd_scene load_steps=6 format=3 uid="uid://7ng858dw7u0d"]
 
 [ext_resource type="Script" path="res://prefabs/key.gd" id="1_cp2h4"]
 [ext_resource type="PackedScene" uid="uid://dsgxgaqvjakqm" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/key.gltf" id="2_n8mto"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4hgc1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejhw1"]
+bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ud48i"]
+size = Vector3(8.39886, 1, 8.28098)
 
 [node name="key" type="Node3D"]
 script = ExtResource("1_cp2h4")
@@ -15,4 +26,36 @@ script = ExtResource("1_cp2h4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_4hgc1")
 
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2.0
+offset_right = 1150.0
+offset_bottom = 648.0
+
+[node name="Panel4" type="Panel" parent="Control2"]
+offset_left = 320.0
+offset_top = 512.0
+offset_right = 832.0
+offset_bottom = 624.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ejhw1")
+
+[node name="Label" type="Label" parent="Control2/Panel4"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 513.0
+offset_bottom = 139.0
+text = "You now have the key to open the gate to the skull master.
+Simply get close to the door to open it."
+horizontal_alignment = 1
+
+[node name="Area3D2" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.176117, 0, -0.925766)
+shape = SubResource("BoxShape3D_ud48i")
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="body_exited" from="Area3D2" to="." method="_on_area_3d_2_body_exited"]

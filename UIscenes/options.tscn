@@ -202,17 +202,16 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "shoot"
 
-[node name="Label5" type="Label" parent="VBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "interact
-"
-
 [node name="Label6" type="Label" parent="VBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Use potion
 "
+
+[node name="Label7" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "pause"
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -241,17 +240,16 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "LEFT CLICK"
 
-[node name="Label5" type="Label" parent="VBoxContainer4"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "E
-"
-
 [node name="Label6" type="Label" parent="VBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Q
 "
+
+[node name="Label7" type="Label" parent="VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Esc"
 
 [connection signal="pressed" from="BACKTOMAINMENU" to="." method="_on_backtomainmenu_pressed"]
 [connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]

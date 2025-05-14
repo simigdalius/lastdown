@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dqwo5212gq02k" path="res://scenes/player.tscn" id="5_uf8mj"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="6_6ahi0"]
 [ext_resource type="PackedScene" uid="uid://dp0c5f6jeb04p" path="res://characterAssets/assets/gltf/Skeleton_Staff.gltf" id="6_oyhbx"]
+[ext_resource type="Script" path="res://scripts/mainhub.gd" id="7_4lq68"]
 [ext_resource type="PackedScene" uid="uid://dufp77sdephg8" path="res://prefabs/bullet.tscn" id="7_xgi2s"]
-[ext_resource type="Script" path="res://scripts/backtoHub.gd" id="8_n2f8l"]
 [ext_resource type="PackedScene" uid="uid://bcslj0a4jrkln" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/plate.gltf" id="9_a3cpl"]
 [ext_resource type="PackedScene" uid="uid://bp3n11e1wfli1" path="res://UIscenes/pause_interface.tscn" id="10_khalh"]
 [ext_resource type="PackedScene" uid="uid://cbeh8inc3inmm" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/candle_triple.gltf" id="10_tb2ee"]
@@ -198,7 +198,7 @@ size = Vector3(6.42255, 4.5304, 7.83519)
 
 [node name="levelchangezone" type="Area3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 96.8293, 5.67991, 19.2973)
-script = ExtResource("8_n2f8l")
+script = ExtResource("7_4lq68")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="levelchangezone"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -21.7478, 0, -33.8895)

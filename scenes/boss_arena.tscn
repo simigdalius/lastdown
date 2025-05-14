@@ -48,6 +48,9 @@ script/source = "extends \"res://scripts/enemy.gd\"
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+func _ready() -> void:
+	pass # Replace with function body.
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -107,10 +110,7 @@ size = Vector3(1, 0.351563, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.87445, -2.0568)
 script = SubResource("GDScript_2wokm")
 move_speed = 10.0
-initial_health = 900.0
-
-[node name="Skeleton_Warrior" parent="enemyboss" instance=ExtResource("2_40v48")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.976055, 0)
+initial_health = 500.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -5162,6 +5162,16 @@ light_color = Color(0, 0.913725, 1, 1)
 [node name="OmniLight3D2" type="OmniLight3D" parent="plate3"]
 transform = Transform3D(0.333333, 0, 0, 0, 1, 0, 0, 0, 0.333333, 0.0402751, 0.670144, 0.00307465)
 light_color = Color(0, 0.913725, 1, 1)
+
+[node name="pauseInterface" parent="." instance=ExtResource("3_1fffs")]
+
+[node name="bossara" parent="." instance=ExtResource("9_thbng")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.87445, -2.0568)
+move_speed = 10.0
+initial_health = 300.0
+
+[node name="Skeleton_Warrior" parent="bossara" instance=ExtResource("2_40v48")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00142193, -0.907533, 0.0167613)
 
 [connection signal="body_entered" from="levelchangezone2" to="levelchangezone2" method="_on_body_entered"]
 [connection signal="timeout" from="enemymap/minionspawn/spawntime" to="enemymap/minionspawn" method="_on_timer_timeout"]

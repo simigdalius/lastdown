@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddfrnj01kfpls"]
+
+[ext_resource type="Texture2D" uid="uid://d25ur5wo8s2rm" path="res://completion.png" id="1_3ofjh"]
+[ext_resource type="Script" path="res://UI/complition.gd" id="1_chvh7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a5wod"]
+texture = ExtResource("1_3ofjh")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ot4jm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_af171"]
+bg_color = Color(0.560784, 0.333333, 0.313726, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1apy"]
+bg_color = Color(0.976471, 0.529412, 0.521569, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4tci"]
+bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_chvh7")
+
+[node name="Panel2" type="Panel" parent="."]
+offset_right = 1153.0
+offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_a5wod")
+
+[node name="Label2" type="Label" parent="Panel2"]
+offset_left = 53.0
+offset_top = 16.0
+offset_right = 1104.0
+offset_bottom = 61.0
+theme_override_colors/font_shadow_color = Color(0.427451, 0.0745098, 0.105882, 1)
+theme_override_colors/font_outline_color = Color(0.427451, 0.0745098, 0.105882, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 32
+text = "Congratulations! You defeated the skull master and freed the valley."
+
+[node name="Label3" type="Label" parent="Panel2"]
+offset_left = 411.0
+offset_top = 535.0
+offset_right = 756.0
+offset_bottom = 580.0
+theme_override_colors/font_shadow_color = Color(0.427451, 0.0745098, 0.105882, 1)
+theme_override_colors/font_outline_color = Color(0.427451, 0.0745098, 0.105882, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 32
+text = "Thank you for playing"
+
+[node name="quit" type="Button" parent="Panel2"]
+offset_left = 393.0
+offset_top = 584.0
+offset_right = 767.0
+offset_bottom = 639.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ot4jm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_af171")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u1apy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h4tci")
+text = "Quit"
+
+[connection signal="pressed" from="Panel2/quit" to="." method="_on_quit_pressed"]

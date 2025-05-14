@@ -10,8 +10,8 @@
 [ext_resource type="Script" path="res://scripts/death_zone.gd" id="9_m7jwt"]
 [ext_resource type="PackedScene" uid="uid://bp3n11e1wfli1" path="res://UIscenes/pause_interface.tscn" id="9_o1nu0"]
 [ext_resource type="PackedScene" uid="uid://dp0c5f6jeb04p" path="res://characterAssets/assets/gltf/Skeleton_Staff.gltf" id="9_v3vwl"]
-[ext_resource type="Script" path="res://scripts/backtoHub.gd" id="10_d81qj"]
 [ext_resource type="PackedScene" uid="uid://hbk2y1toelr0" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_wood_large.gltf" id="12_1qvur"]
+[ext_resource type="Script" path="res://scripts/mainhub.gd" id="12_034i4"]
 [ext_resource type="PackedScene" uid="uid://dm8vb5ccnkp3w" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_wood_large_dark.gltf" id="12_qyvvt"]
 [ext_resource type="PackedScene" uid="uid://dqfs0q7e1s4f3" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/pillar_decorated.gltf" id="12_w54ri"]
 [ext_resource type="PackedScene" uid="uid://0hpe28ktwn21" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/pillar.gltf" id="13_0y7tk"]
@@ -244,7 +244,7 @@ shape = SubResource("BoxShape3D_jdajj")
 
 [node name="levelchangezone" type="Area3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -11.4643, 2.51061, -16.5367)
-script = ExtResource("10_d81qj")
+script = ExtResource("12_034i4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="levelchangezone"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -21.7478, 0, -33.8895)

@@ -9,13 +9,11 @@ var root_node : Node3D
 var can_spawn = true
 var i=0 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if can_spawn == true and $"../../enemyboss":
+		
+	if can_spawn == true and $"../../bossara":
 		i=0
 		for i in 4:
 			var enemy = enemy_prefab.instantiate()
@@ -24,6 +22,7 @@ func _process(delta: float) -> void:
 			root_node.add_child(enemy)
 		$spawntime.start()
 		can_spawn = false
+
 
 
 func _on_timer_timeout() -> void:

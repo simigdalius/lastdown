@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://cyqnrh418bqk0"]
+[gd_scene load_steps=66 format=3 uid="uid://cyqnrh418bqk0"]
 
 [ext_resource type="PackedScene" uid="uid://dqwo5212gq02k" path="res://scenes/player.tscn" id="1_sbx65"]
 [ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="2_ux3em"]
@@ -87,6 +87,14 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yqjpk"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cd7xh"]
+bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
 [node name="Map1mainHub" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -154,7 +162,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 13.8915, 0.45737, 9.98853)
 shape = SubResource("BoxShape3D_n42ni")
 
 [node name="NPC" parent="." instance=ExtResource("8_c0vp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00671, 0.84416, 21.201)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00671, 0.600793, 20.341)
 
 [node name="map" type="Node3D" parent="."]
 
@@ -5138,6 +5146,36 @@ script = ExtResource("55_d4qsh")
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.664782, 0, 26.7968)
 shape = SubResource("BoxShape3D_c3rd7")
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel4" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 577.0
+offset_right = 729.0
+offset_bottom = 624.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cd7xh")
+
+[node name="Label2" type="Label" parent="Control/Panel4"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 12.0
+offset_right = 225.0
+offset_bottom = 35.0
+text = "You completed this level"
+
+[node name="Button" type="Button" parent="Control/Panel4"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 7.0
+offset_right = 286.0
+offset_bottom = 38.0
+text = "ok"
+
 [connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
 [connection signal="body_entered" from="keylevel" to="keylevel" method="_on_body_entered"]
 [connection signal="body_entered" from="minirushlevel" to="player" method="_on_levelchangezone_3_body_entered"]
@@ -5147,3 +5185,6 @@ shape = SubResource("BoxShape3D_c3rd7")
 [connection signal="body_entered" from="tothe boss" to="player" method="_on_levelchangezone_3_body_entered"]
 [connection signal="body_entered" from="tothe boss" to="tothe boss" method="_on_body_entered"]
 [connection signal="body_entered" from="tothebook" to="tothebook" method="_on_body_entered"]
+[connection signal="pressed" from="Control/Panel4/Button" to="keylevel" method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Panel4/Button" to="minirushlevel" method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Panel4/Button" to="tothebook" method="_on_button_pressed"]
