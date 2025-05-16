@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dcvrhhlsyykfq"]
+[gd_scene load_steps=35 format=3 uid="uid://dcvrhhlsyykfq"]
 
 [ext_resource type="PackedScene" uid="uid://t704fbialdnh" path="res://scenes/single_use_platform.tscn" id="1_2dmmn"]
 [ext_resource type="PackedScene" uid="uid://dqwo5212gq02k" path="res://scenes/player.tscn" id="1_r4rgb"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://cy0krwetvai8l" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_small.gltf" id="26_41emo"]
 [ext_resource type="PackedScene" uid="uid://tjagijt6xt5n" path="res://prefabs/healthpotion.tscn" id="27_jqhdd"]
 [ext_resource type="PackedScene" uid="uid://bv3jxwsbcgh3w" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_small_weeds_B.gltf" id="27_pw756"]
+[ext_resource type="Script" path="res://scripts/emfanizei_onoma_pistas.gd" id="28_fjcc4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2lwyl"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -48,6 +49,9 @@ size = Vector3(1, 0.351563, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwfer"]
 size = Vector3(1, 1, 0.914063)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d5ol4"]
+size = Vector3(3.36377, 5.34967, 3.83447)
 
 [node name="parkourmap" type="Node3D"]
 
@@ -4718,9 +4722,46 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.8178, 1.15268, 111.01)
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.032156, 0.4719, 0.0332069)
 light_color = Color(1, 0, 0, 1)
 
+[node name="levelname" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label3" type="Label" parent="levelname"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 404.0
+offset_top = 40.0
+offset_right = 700.0
+offset_bottom = 85.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.427451, 0.0745098, 0.105882, 1)
+theme_override_colors/font_outline_color = Color(0.427451, 0.0745098, 0.105882, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 32
+text = "health potion level"
+
+[node name="emfanizei onoma pistas" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.61648, 0)
+script = ExtResource("28_fjcc4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="emfanizei onoma pistas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1572, 0.680086, -1.371)
+shape = SubResource("BoxShape3D_d5ol4")
+
+[node name="Timer" type="Timer" parent="emfanizei onoma pistas"]
+
 [connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
 [connection signal="body_entered" from="deathZone/deathZone2" to="deathZone/deathZone2" method="_on_body_entered"]
 [connection signal="body_entered" from="deathZone/deathZone3" to="deathZone/deathZone3" method="_on_body_entered"]
 [connection signal="body_entered" from="deathZone/deathZone4" to="deathZone/deathZone4" method="_on_body_entered"]
 [connection signal="body_entered" from="levelchangezone" to="map/CSGBox3D6/single_use_platform" method="_on_levelchangezone_body_entered"]
 [connection signal="body_entered" from="levelchangezone" to="levelchangezone" method="_on_body_entered"]
+[connection signal="body_entered" from="emfanizei onoma pistas" to="emfanizei onoma pistas" method="_on_body_entered"]
+[connection signal="timeout" from="emfanizei onoma pistas/Timer" to="emfanizei onoma pistas" method="_on_timer_timeout"]

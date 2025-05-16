@@ -76,6 +76,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
 offset_left = 320.0
 offset_right = 832.0
 offset_bottom = 92.0
@@ -102,6 +103,7 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_8s4wi")
 text = "OK"
 
 [node name="Panel2" type="Panel" parent="Control"]
+layout_mode = 0
 offset_left = 320.0
 offset_top = -14.0
 offset_right = 832.0
@@ -130,6 +132,7 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_8s4wi")
 text = "OK"
 
 [node name="Panel4" type="Panel" parent="Control"]
+layout_mode = 0
 offset_left = 320.0
 offset_top = -14.0
 offset_right = 832.0

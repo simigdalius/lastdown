@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ddfrnj01kfpls"]
 
-[ext_resource type="Texture2D" uid="uid://d25ur5wo8s2rm" path="res://completion.png" id="1_3ofjh"]
+[ext_resource type="Texture2D" uid="uid://d25ur5wo8s2rm" path="res://itemicons/completion.png" id="1_3ofjh"]
 [ext_resource type="Script" path="res://UI/complition.gd" id="1_chvh7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a5wod"]
@@ -40,11 +40,13 @@ offset_bottom = 40.0
 script = ExtResource("1_chvh7")
 
 [node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 650.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_a5wod")
 
 [node name="Label2" type="Label" parent="Panel2"]
+layout_mode = 0
 offset_left = 53.0
 offset_top = 16.0
 offset_right = 1104.0
@@ -59,6 +61,7 @@ theme_override_font_sizes/font_size = 32
 text = "Congratulations! You defeated the skull master and freed the valley."
 
 [node name="Label3" type="Label" parent="Panel2"]
+layout_mode = 0
 offset_left = 411.0
 offset_top = 535.0
 offset_right = 756.0
@@ -73,6 +76,7 @@ theme_override_font_sizes/font_size = 32
 text = "Thank you for playing"
 
 [node name="quit" type="Button" parent="Panel2"]
+layout_mode = 0
 offset_left = 393.0
 offset_top = 584.0
 offset_right = 767.0

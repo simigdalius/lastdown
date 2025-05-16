@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ixf5lp7sbuea"
-path="res://.godot/imported/gameover.png-ccc12850baa89029b52eaa24696a07bd.ctex"
+uid="uid://d25ur5wo8s2rm"
+path="res://.godot/imported/completion.png-6d55b4b1d3b033c159d7f7b6519d99fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gameover.png"
-dest_files=["res://.godot/imported/gameover.png-ccc12850baa89029b52eaa24696a07bd.ctex"]
+source_file="res://itemicons/completion.png"
+dest_files=["res://.godot/imported/completion.png-6d55b4b1d3b033c159d7f7b6519d99fc.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://blhpkut2n8wi"]
 
 [ext_resource type="Script" path="res://UI/game_over.gd" id="1_y10lx"]
-[ext_resource type="Texture2D" uid="uid://ixf5lp7sbuea" path="res://gameover.png" id="2_t3dta"]
+[ext_resource type="Texture2D" uid="uid://ixf5lp7sbuea" path="res://itemicons/gameover.png" id="2_t3dta"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvini"]
 texture = ExtResource("2_t3dta")

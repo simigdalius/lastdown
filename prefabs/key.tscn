@@ -34,6 +34,7 @@ offset_right = 1150.0
 offset_bottom = 648.0
 
 [node name="Panel4" type="Panel" parent="Control2"]
+layout_mode = 0
 offset_left = 320.0
 offset_top = 512.0
 offset_right = 832.0

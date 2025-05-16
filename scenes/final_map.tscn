@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://b32pbo22f0n86"]
+[gd_scene load_steps=81 format=3 uid="uid://b32pbo22f0n86"]
 
 [ext_resource type="Script" path="res://scripts/enemy_spawner.gd" id="1_61uaq"]
 [ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="1_jnbip"]
@@ -61,6 +61,7 @@
 [ext_resource type="PackedScene" uid="uid://dwk8bdbr8k1ie" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_lumbermill_red.gltf" id="60_wd2ct"]
 [ext_resource type="PackedScene" uid="uid://7ng858dw7u0d" path="res://prefabs/key.tscn" id="61_717uf"]
 [ext_resource type="PackedScene" uid="uid://t704fbialdnh" path="res://scenes/single_use_platform.tscn" id="61_rnyox"]
+[ext_resource type="Script" path="res://scripts/emfanizei_onoma_pistas.gd" id="62_mlo60"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kmcb8"]
 sky_top_color = Color(0.385751, 0.0013854, 0.914582, 1)
@@ -119,6 +120,9 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggwtx"]
 albedo_color = Color(0.321728, 0.321728, 0.321728, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8twe6"]
+size = Vector3(3.36377, 5.34967, 3.83447)
 
 [node name="finalMap" type="Node3D"]
 
@@ -7151,5 +7155,42 @@ transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1
 [node name="single_use_platform24" parent="singleplatform" instance=ExtResource("61_rnyox")]
 transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 72.7038, 6.38456, 23.6467)
 
+[node name="levelname" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label3" type="Label" parent="levelname"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 492.0
+offset_top = 40.0
+offset_right = 636.0
+offset_bottom = 85.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.427451, 0.0745098, 0.105882, 1)
+theme_override_colors/font_outline_color = Color(0.427451, 0.0745098, 0.105882, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 32
+text = "key level"
+
+[node name="emfanizei onoma pistas" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0414, 2.61648, -25.919)
+script = ExtResource("62_mlo60")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="emfanizei onoma pistas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1572, 0.680086, -1.371)
+shape = SubResource("BoxShape3D_8twe6")
+
+[node name="Timer" type="Timer" parent="emfanizei onoma pistas"]
+
 [connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
 [connection signal="body_entered" from="levelchangezone" to="levelchangezone" method="_on_body_entered"]
+[connection signal="body_entered" from="emfanizei onoma pistas" to="emfanizei onoma pistas" method="_on_body_entered"]
+[connection signal="timeout" from="emfanizei onoma pistas/Timer" to="emfanizei onoma pistas" method="_on_timer_timeout"]

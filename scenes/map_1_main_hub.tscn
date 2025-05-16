@@ -724,6 +724,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3978, 4.85728, -8.14173)
 operation = 2
 size = Vector3(2.86688, 1.42723, 2.1792)
 
+[node name="CSGBox3D5" type="CSGBox3D" parent="map/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3585, 3.07869, -17.3365)
+operation = 2
+size = Vector3(3.36182, 7.49274, 0.785278)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="map/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93699, 1.61861, -16.2689)
+size = Vector3(13.12, 3.92529, 0.763672)
+
 [node name="shelf_small_candles2" parent="map" instance=ExtResource("31_7bvwl")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.1145, 6.26987, 1.86752)
 
@@ -948,6 +957,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6149, 0, -5.72205e-06)
 
 [node name="wall11" parent="map/wall_corner_small8/wall7" instance=ExtResource("27_188fe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.4947, 0, -6.67572e-06)
+
+[node name="wall2" parent="map/wall_corner_small8/wall7/wall11" instance=ExtResource("27_188fe")]
+transform = Transform3D(3.49691e-08, 6.60024e-15, 1, 1.20797e-07, -1, 5.0822e-21, 0.8, 1.50996e-07, -4.37114e-08, 2.92172, -9.70216, 0.704513)
+
+[node name="wall3" parent="map/wall_corner_small8/wall7/wall11" instance=ExtResource("27_188fe")]
+transform = Transform3D(-0.8, 8.74228e-08, 0, -6.99382e-08, -1, 0, 0, 0, 1, 2.08738, -6.52847, -0.14886)
 
 [node name="wall_corner_small9" parent="map" instance=ExtResource("21_uhpqw")]
 transform = Transform3D(-1, 1.50996e-07, -6.60024e-15, 0, -4.37114e-08, -1, -1.50996e-07, -1, 4.37114e-08, 22.8352, 8.15298, -8.56517)

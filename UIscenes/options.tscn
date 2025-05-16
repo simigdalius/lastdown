@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c5m0k7v3kyyqp"]
 
-[ext_resource type="Texture2D" uid="uid://riihmplja6kp" path="res://options.png" id="1_mmi21"]
+[ext_resource type="Texture2D" uid="uid://riihmplja6kp" path="res://itemicons/options.png" id="1_mmi21"]
 [ext_resource type="Script" path="res://UI/options.gd" id="1_pmxce"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wk83h"]
