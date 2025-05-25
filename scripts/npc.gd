@@ -16,13 +16,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+#arxh chat
 func _on_chat_detection_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		$Control/Panel3.show()
 		$Control/Panel.show()
 
-
+#2o chat box afou paththei koumpi etc
 func _on_button_pressed() -> void:
 	if i==0:
 		$Control/Panel.hide()

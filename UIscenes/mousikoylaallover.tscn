@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://itk8v6amf0f4"]
+
+[ext_resource type="AudioStream" uid="uid://bxdmxfjeq6emc" path="res://UIscenes/old-sega-console-game-music-345702.mp3" id="1_8ygyf"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_8ygyf")
+volume_db = -50.0
+autoplay = true

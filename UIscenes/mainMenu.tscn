@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwb0v7om5gjyq"]
+[gd_scene load_steps=13 format=3 uid="uid://dwb0v7om5gjyq"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_rqyru"]
 [ext_resource type="Texture2D" uid="uid://q5l72ec1nf6l" path="res://itemicons/mainmenuimage.png" id="2_3gyq8"]
+[ext_resource type="PackedScene" uid="uid://itk8v6amf0f4" path="res://UIscenes/mousikoylaallover.tscn" id="3_ldgsq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dt2g2"]
 texture = ExtResource("2_3gyq8")
@@ -146,6 +147,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_03ab6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2f562")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2maby")
 text = "exit"
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("3_ldgsq")]
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]

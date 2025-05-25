@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dcvrhhlsyykfq"]
+[gd_scene load_steps=36 format=3 uid="uid://dcvrhhlsyykfq"]
 
 [ext_resource type="PackedScene" uid="uid://t704fbialdnh" path="res://scenes/single_use_platform.tscn" id="1_2dmmn"]
 [ext_resource type="PackedScene" uid="uid://dqwo5212gq02k" path="res://scenes/player.tscn" id="1_r4rgb"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://tjagijt6xt5n" path="res://prefabs/healthpotion.tscn" id="27_jqhdd"]
 [ext_resource type="PackedScene" uid="uid://bv3jxwsbcgh3w" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/floor_tile_small_weeds_B.gltf" id="27_pw756"]
 [ext_resource type="Script" path="res://scripts/emfanizei_onoma_pistas.gd" id="28_fjcc4"]
+[ext_resource type="PackedScene" uid="uid://itk8v6amf0f4" path="res://UIscenes/mousikoylaallover.tscn" id="29_vkh7n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2lwyl"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -4756,6 +4757,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1572, 0.680086, -1.371)
 shape = SubResource("BoxShape3D_d5ol4")
 
 [node name="Timer" type="Timer" parent="emfanizei onoma pistas"]
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("29_vkh7n")]
 
 [connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
 [connection signal="body_entered" from="deathZone/deathZone2" to="deathZone/deathZone2" method="_on_body_entered"]

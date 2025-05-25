@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://b32pbo22f0n86"]
+[gd_scene load_steps=82 format=3 uid="uid://b32pbo22f0n86"]
 
 [ext_resource type="Script" path="res://scripts/enemy_spawner.gd" id="1_61uaq"]
 [ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="1_jnbip"]
@@ -62,6 +62,7 @@
 [ext_resource type="PackedScene" uid="uid://7ng858dw7u0d" path="res://prefabs/key.tscn" id="61_717uf"]
 [ext_resource type="PackedScene" uid="uid://t704fbialdnh" path="res://scenes/single_use_platform.tscn" id="61_rnyox"]
 [ext_resource type="Script" path="res://scripts/emfanizei_onoma_pistas.gd" id="62_mlo60"]
+[ext_resource type="PackedScene" uid="uid://itk8v6amf0f4" path="res://UIscenes/mousikoylaallover.tscn" id="63_umjgc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kmcb8"]
 sky_top_color = Color(0.385751, 0.0013854, 0.914582, 1)
@@ -7189,6 +7190,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1572, 0.680086, -1.371)
 shape = SubResource("BoxShape3D_8twe6")
 
 [node name="Timer" type="Timer" parent="emfanizei onoma pistas"]
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("63_umjgc")]
 
 [connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
 [connection signal="body_entered" from="levelchangezone" to="levelchangezone" method="_on_body_entered"]

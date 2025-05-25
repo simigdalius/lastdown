@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cnoktiruuwenx"]
+[gd_scene load_steps=52 format=3 uid="uid://cnoktiruuwenx"]
 
 [ext_resource type="PackedScene" uid="uid://nqtqjc8uspdc" path="res://prefabs/enemy.tscn" id="2_jabvq"]
 [ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="3_tnbnj"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://blewndy5y1e4b" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_archeryrange_red.gltf" id="24_wyggn"]
 [ext_resource type="PackedScene" uid="uid://euxynrobsek7" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_market_red.gltf" id="25_vt0bh"]
 [ext_resource type="PackedScene" uid="uid://dwk8bdbr8k1ie" path="res://KayKit_Medieval_Hexagon_Pack_1.0_FREE/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/building_lumbermill_red.gltf" id="26_o33ws"]
+[ext_resource type="PackedScene" uid="uid://itk8v6amf0f4" path="res://UIscenes/mousikoylaallover.tscn" id="30_xwgs7"]
 [ext_resource type="Script" path="res://scripts/emfanizei_onoma_pistas.gd" id="31_drh6t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2nisq"]
@@ -4994,6 +4995,8 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.2283
 
 [node name="building_archeryrange_red2" parent="background/building_castle_red2/background2/building_castle_red2" instance=ExtResource("24_wyggn")]
 transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 1.62102, 0.0630425, -0.285295)
+
+[node name="AudioStreamPlayer" parent="background/building_castle_red2/background2/building_castle_red2/building_archeryrange_red2" instance=ExtResource("30_xwgs7")]
 
 [node name="building_archeryrange_red3" parent="background/building_castle_red2/background2/building_castle_red2" instance=ExtResource("24_wyggn")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.5231, 0.0630425, -1.40048)

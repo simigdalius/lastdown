@@ -72,7 +72,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		$Skeleton_Mage/AnimationPlayer.current_animation = 'Idle_B'
-	
 	#gia to dash
 	if Input.is_action_just_pressed("dash") and can_dash:
 		can_dash = false
@@ -85,9 +84,7 @@ func _physics_process(delta: float) -> void:
 	var ray_origin =camera.project_ray_origin(mouse_pos)
 	var ray_direction = ray_origin + camera.project_ray_normal(mouse_pos) * 500
 	var ray_query = PhysicsRayQueryParameters3D.create(ray_origin, ray_direction)
-	
 	ray_query.collide_with_bodies = true
-	
 	var space_state = get_world_3d().direct_space_state
 	var ray_result =space_state.intersect_ray(ray_query)
 	if(!ray_result.is_empty()):

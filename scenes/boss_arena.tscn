@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cwv32rt6gkony"]
+[gd_scene load_steps=54 format=3 uid="uid://cwv32rt6gkony"]
 
 [ext_resource type="PackedScene" uid="uid://dqwo5212gq02k" path="res://scenes/player.tscn" id="1_cgqq2"]
 [ext_resource type="PackedScene" uid="uid://drgimrxgisgo1" path="res://animassets/bossskin.tscn" id="2_40v48"]
@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://bcslj0a4jrkln" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/plate.gltf" id="33_dlnqp"]
 [ext_resource type="PackedScene" uid="uid://cbeh8inc3inmm" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/candle_triple.gltf" id="34_obwgy"]
 [ext_resource type="Script" path="res://scripts/emfanizei_onoma_pistas.gd" id="41_wbu8v"]
+[ext_resource type="PackedScene" uid="uid://itk8v6amf0f4" path="res://UIscenes/mousikoylaallover.tscn" id="42_3nanj"]
 
 [sub_resource type="GDScript" id="GDScript_2wokm"]
 script/source = "extends \"res://scripts/enemy.gd\"
@@ -5357,6 +5358,7 @@ text = "boss fight
 "
 
 [node name="Panel4" type="Panel" parent="levelname"]
+layout_mode = 0
 offset_left = 408.0
 offset_top = 576.0
 offset_right = 750.0
@@ -5380,6 +5382,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1572, 0.680086, -1.371)
 shape = SubResource("BoxShape3D_hvndn")
 
 [node name="Timer" type="Timer" parent="emfanizei onoma pistas"]
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("42_3nanj")]
 
 [connection signal="body_entered" from="levelchangezone2" to="levelchangezone2" method="_on_body_entered"]
 [connection signal="timeout" from="enemymap/minionspawn/spawntime" to="enemymap/minionspawn" method="_on_timer_timeout"]

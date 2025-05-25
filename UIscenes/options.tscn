@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5m0k7v3kyyqp"]
+[gd_scene load_steps=16 format=3 uid="uid://c5m0k7v3kyyqp"]
 
 [ext_resource type="Texture2D" uid="uid://riihmplja6kp" path="res://itemicons/options.png" id="1_mmi21"]
 [ext_resource type="Script" path="res://UI/options.gd" id="1_pmxce"]
+[ext_resource type="PackedScene" uid="uid://itk8v6amf0f4" path="res://UIscenes/mousikoylaallover.tscn" id="3_abqta"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wk83h"]
 texture = ExtResource("1_mmi21")
@@ -56,6 +57,22 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mgku"]
+bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijtp6"]
+bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rer4u"]
 bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
@@ -173,6 +190,8 @@ alignment = 1
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_3mgku")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ijtp6")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_rer4u")
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
@@ -250,6 +269,8 @@ text = "Q
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Esc"
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("3_abqta")]
 
 [connection signal="pressed" from="BACKTOMAINMENU" to="." method="_on_backtomainmenu_pressed"]
 [connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
