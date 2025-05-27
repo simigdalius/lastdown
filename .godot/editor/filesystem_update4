@@ -1,15 +1,8 @@
-res://UIscenes/options.tscn
-res://scripts/npc.gd
+res://scenes/player.tscn
 res://scripts/player.gd
+res://UIscenes/options.tscn
 res://UIscenes/gameOver.tscn
 res://prefabs/npc.tscn
-res://prefabs/book.tscn
-res://prefabs/key.tscn
-res://prefabs/healthpotion.tscn
-res://scenes/boss_arena.tscn
-res://UIscenes/complition.tscn
-res://scenes/bookmap.tscn
-res://scenes/parkourmap.tscn
 res://scenes/map_1_main_hub.tscn
 res://scenes/final_map.tscn
 res://UIscenes/mousikoylaallover.tscn

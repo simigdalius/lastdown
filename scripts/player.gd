@@ -23,6 +23,7 @@ var current_health : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$flash.hide()
 	current_health = initial_health
 	$Control/TextureProgressBar.max_value = initial_health
 	
@@ -109,7 +110,8 @@ func dash():
 	if Global.book_found:
 		SPEED = SPEED + dash_speed
 		$dashtime.start()
+		$flash.show()
 #posh wra phgainei san bolida
 func _on_dashtime_timeout() -> void:
 	SPEED = 12
-	
+	$flash.hide()

@@ -65,6 +65,24 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.
 
 [node name="inventory" parent="." instance=ExtResource("4_3go7p")]
 
+[node name="flash" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="flash"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.569201)
+light_color = Color(1, 0, 0, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="flash"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.02214)
+light_color = Color(1, 0.494118, 0, 1)
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="flash"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.783436, 0.948054)
+light_color = Color(1, 0, 0, 1)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="flash"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04314, 0.446819)
+light_color = Color(1, 0.494118, 0, 1)
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="dashtime" to="." method="_on_dashtime_timeout"]
