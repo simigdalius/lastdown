@@ -7159,6 +7159,30 @@ transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1
 [node name="single_use_platform24" parent="singleplatform" instance=ExtResource("61_rnyox")]
 transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 72.7038, 6.38456, 23.6467)
 
+[node name="single_use_platform25" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 76.53, 6.28425, 17.6099)
+
+[node name="single_use_platform26" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 74.5628, 6.33765, 17.6099)
+
+[node name="single_use_platform27" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 74.5628, 6.33765, 19.6056)
+
+[node name="single_use_platform28" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 76.5698, 6.28317, 19.6056)
+
+[node name="single_use_platform29" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 76.53, 6.28425, 21.651)
+
+[node name="single_use_platform30" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 74.5628, 6.33765, 21.651)
+
+[node name="single_use_platform31" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 74.5628, 6.33765, 23.6467)
+
+[node name="single_use_platform32" parent="singleplatform" instance=ExtResource("61_rnyox")]
+transform = Transform3D(0.999632, 0.0271365, 0, -0.0271365, 0.999632, 0, 0, 0, 1, 76.5698, 6.28317, 23.6467)
+
 [node name="levelname" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -7193,8 +7217,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1572, 0.680086, -1.371)
 shape = SubResource("BoxShape3D_8twe6")
 
 [node name="Timer" type="Timer" parent="emfanizei onoma pistas"]
-
-[node name="AudioStreamPlayer" parent="." instance=ExtResource("63_umjgc")]
 
 [node name="mapEnemy3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.5835, 5.15992, 8.42278)
@@ -7264,6 +7286,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.82211, 10.8432)
 
 [node name="enemy2" parent="mapEnemy5" instance=ExtResource("3_p4hnu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.52317, 1.82211, 10.8432)
+
+[node name="plate2" parent="." instance=ExtResource("32_o5niq")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 101.612, 6.07758, 22.2151)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="plate2"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0.261512, 0)
+light_color = Color(1, 0, 0, 1)
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("63_umjgc")]
+volume_db = -20.0
 
 [connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
 [connection signal="body_entered" from="levelchangezone" to="levelchangezone" method="_on_body_entered"]

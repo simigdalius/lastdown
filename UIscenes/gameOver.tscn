@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://blhpkut2n8wi"]
+[gd_scene load_steps=12 format=3 uid="uid://blhpkut2n8wi"]
 
 [ext_resource type="Script" path="res://UI/game_over.gd" id="1_y10lx"]
 [ext_resource type="Texture2D" uid="uid://ixf5lp7sbuea" path="res://itemicons/gameover.png" id="2_t3dta"]
-[ext_resource type="PackedScene" uid="uid://itk8v6amf0f4" path="res://UIscenes/mousikoylaallover.tscn" id="3_0f65n"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvini"]
 texture = ExtResource("2_t3dta")
@@ -118,8 +117,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rtxg3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hw86l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ayww5")
 text = "Quit"
-
-[node name="AudioStreamPlayer" parent="." instance=ExtResource("3_0f65n")]
 
 [connection signal="pressed" from="GridContainer/retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="GridContainer/quit" to="." method="_on_quit_pressed"]

@@ -5384,6 +5384,7 @@ shape = SubResource("BoxShape3D_hvndn")
 [node name="Timer" type="Timer" parent="emfanizei onoma pistas"]
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("42_3nanj")]
+volume_db = -20.0
 
 [connection signal="body_entered" from="levelchangezone2" to="levelchangezone2" method="_on_body_entered"]
 [connection signal="timeout" from="enemymap/minionspawn/spawntime" to="enemymap/minionspawn" method="_on_timer_timeout"]

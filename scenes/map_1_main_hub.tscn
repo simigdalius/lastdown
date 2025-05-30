@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://cyqnrh418bqk0"]
+[gd_scene load_steps=70 format=3 uid="uid://cyqnrh418bqk0"]
 
 [ext_resource type="PackedScene" uid="uid://dqwo5212gq02k" path="res://scenes/player.tscn" id="1_sbx65"]
 [ext_resource type="Script" path="res://scripts/spring_arm_3d.gd" id="2_ux3em"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://bgyf484655lx6" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/shelf_small_candles.gltf" id="31_7bvwl"]
 [ext_resource type="PackedScene" uid="uid://xdb71mqb4dq2" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/keyring_hanging.gltf" id="32_yp61q"]
 [ext_resource type="PackedScene" uid="uid://d0k70oamghtru" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/keg_decorated.gltf" id="33_hgcry"]
+[ext_resource type="PackedScene" uid="uid://0hpe28ktwn21" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/pillar.gltf" id="33_r15hq"]
 [ext_resource type="PackedScene" uid="uid://bcipi630ufyng" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/shelf_large.gltf" id="34_xd2f5"]
 [ext_resource type="PackedScene" uid="uid://dtdxnn441ptt2" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_window_closed_scaffold.gltf" id="35_7l8eq"]
 [ext_resource type="PackedScene" uid="uid://bcslj0a4jrkln" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/plate.gltf" id="35_srjeq"]
@@ -55,6 +56,8 @@
 [ext_resource type="PackedScene" uid="uid://cw3fjnuleo1fq" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/wall_corner.gltf" id="53_6q8e2"]
 [ext_resource type="PackedScene" uid="uid://itk8v6amf0f4" path="res://UIscenes/mousikoylaallover.tscn" id="55_8qhne"]
 [ext_resource type="Script" path="res://scripts/tothebook.gd" id="55_d4qsh"]
+[ext_resource type="PackedScene" uid="uid://b4ehxcrr3q2sv" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/banner_triple_red.gltf" id="56_bcpkb"]
+[ext_resource type="PackedScene" uid="uid://dqfs0q7e1s4f3" path="res://KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/gltf/pillar_decorated.gltf" id="57_hxndp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d6ji8"]
 sky_top_color = Color(0.452273, 0.522414, 0.760129, 1)
@@ -860,6 +863,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7599, 0, -2.86102e-06)
 [node name="wall8" parent="map/wall_corner_small8/wall5" instance=ExtResource("27_188fe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6875, 0, -3.8147e-06)
 
+[node name="wall12" parent="map/wall_corner_small8/wall5" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 5.82621e-35, 1, 0, -1, 0, -4.37114e-08, -15.3052, 10.5285, 17.7968)
+
+[node name="wall13" parent="map/wall_corner_small8/wall5" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 5.82621e-35, 1, 0, -1, 0, -4.37114e-08, -15.3052, 10.5285, 21.8097)
+
+[node name="wall14" parent="map/wall_corner_small8/wall5" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 5.82621e-35, 1, 0, -1, 0, -4.37114e-08, -15.3052, 14.4891, 21.8097)
+
+[node name="wall15" parent="map/wall_corner_small8/wall5" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 5.82621e-35, 1, 0, -1, 0, -4.37114e-08, -15.3052, 14.4891, 17.8045)
+
+[node name="wall16" parent="map/wall_corner_small8/wall5" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 5.82621e-35, 1, 0, -1, 0, -4.37114e-08, -15.3052, 10.5285, 25.7305)
+
+[node name="wall17" parent="map/wall_corner_small8/wall5" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 5.82621e-35, 1, 0, -1, 0, -4.37114e-08, -15.3052, 10.5285, 29.7434)
+
+[node name="wall18" parent="map/wall_corner_small8/wall5" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 5.82621e-35, 1, 0, -1, 0, -4.37114e-08, -15.3052, 14.4891, 29.7434)
+
+[node name="wall20" parent="map/wall_corner_small8/wall5" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 5.82621e-35, 1, 0, -1, 0, -4.37114e-08, -15.3052, 14.4891, 33.685)
+
+[node name="wall21" parent="map/wall_corner_small8/wall5" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 5.82621e-35, 1, 0, -1, 0, -4.37114e-08, -15.3052, 10.4946, 33.685)
+
+[node name="wall19" parent="map/wall_corner_small8/wall5" instance=ExtResource("27_188fe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 5.82621e-35, 1, 0, -1, 0, -4.37114e-08, -15.3052, 14.4891, 25.7383)
+
 [node name="wall9" parent="map/wall_corner_small8/wall5" instance=ExtResource("27_188fe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7089, 0, -4.76837e-06)
 
@@ -964,6 +997,9 @@ transform = Transform3D(3.49691e-08, 6.60024e-15, 1, 1.20797e-07, -1, 5.0822e-21
 
 [node name="wall3" parent="map/wall_corner_small8/wall7/wall11" instance=ExtResource("27_188fe")]
 transform = Transform3D(-0.8, 8.74228e-08, 0, -6.99382e-08, -1, 0, 0, 0, 1, 2.08738, -6.52847, -0.14886)
+
+[node name="pillar2" parent="map/wall_corner_small8" instance=ExtResource("33_r15hq")]
+transform = Transform3D(-1, -6.35275e-21, -1.50996e-07, 1.50996e-07, -4.37114e-08, -1, -6.60025e-15, -1, 4.37114e-08, 18.3691, -1.52503, 3.65554)
 
 [node name="wall_corner_small9" parent="map" instance=ExtResource("21_uhpqw")]
 transform = Transform3D(-1, 1.50996e-07, -6.60024e-15, 0, -4.37114e-08, -1, -1.50996e-07, -1, 4.37114e-08, 22.8352, 8.15298, -8.56517)
@@ -5154,6 +5190,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96, 0, 0)
 [node name="floor_wood_large_dark3" parent="throneroom/wall2/floor_wood_large_dark6/floor_wood_large_dark5/floor_wood_large_dark4" instance=ExtResource("10_3q54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89767, 0, 0)
 
+[node name="banner_triple_red2" parent="throneroom" instance=ExtResource("56_bcpkb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.4715, 0.64184, -3.97752)
+
+[node name="banner_triple_red4" parent="throneroom" instance=ExtResource("56_bcpkb")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.384331, 0.531922, 7.4557)
+
+[node name="banner_triple_red3" parent="throneroom" instance=ExtResource("56_bcpkb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.4715, 0.64184, 1.55254)
+
+[node name="pillar_decorated2" parent="throneroom" instance=ExtResource("57_hxndp")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.21672, 0.574655, 7.63066)
+
+[node name="pillar_decorated3" parent="throneroom" instance=ExtResource("57_hxndp")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.73434, 0.574655, 7.63066)
+
 [node name="tothebook" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6841, 6.06419, -27.8432)
 script = ExtResource("55_d4qsh")
@@ -5193,6 +5244,7 @@ offset_bottom = 38.0
 text = "ok"
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("55_8qhne")]
+volume_db = -20.0
 
 [connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
 [connection signal="body_entered" from="keylevel" to="keylevel" method="_on_body_entered"]

@@ -4759,6 +4759,7 @@ shape = SubResource("BoxShape3D_d5ol4")
 [node name="Timer" type="Timer" parent="emfanizei onoma pistas"]
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("29_vkh7n")]
+volume_db = -20.0
 
 [connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
 [connection signal="body_entered" from="deathZone/deathZone2" to="deathZone/deathZone2" method="_on_body_entered"]

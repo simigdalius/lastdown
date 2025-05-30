@@ -149,6 +149,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2maby")
 text = "exit"
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("3_ldgsq")]
+volume_db = -20.0
+bus = &"music"
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]

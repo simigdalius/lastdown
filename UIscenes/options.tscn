@@ -59,13 +59,16 @@ corner_radius_bottom_left = 16
 shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mgku"]
-bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
+bg_color = Color(0.560784, 0.333333, 0.313726, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-expand_margin_top = 1.0
-expand_margin_bottom = 1.0
+expand_margin_left = 1.0
+expand_margin_top = 5.0
+expand_margin_right = 1.0
+expand_margin_bottom = 5.0
+shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijtp6"]
 bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
@@ -73,9 +76,11 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rer4u"]
-bg_color = Color(0.427451, 0.0745098, 0.105882, 1)
+bg_color = Color(0.560784, 0.333333, 0.313726, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -190,9 +195,12 @@ alignment = 1
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_constants/center_grabber = 1
 theme_override_styles/slider = SubResource("StyleBoxFlat_3mgku")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ijtp6")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_rer4u")
+max_value = 10.0
+value = 5.0
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -271,6 +279,8 @@ size_flags_horizontal = 4
 text = "Esc"
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("3_abqta")]
+volume_db = -20.0
 
 [connection signal="pressed" from="BACKTOMAINMENU" to="." method="_on_backtomainmenu_pressed"]
+[connection signal="mouse_exited" from="VBoxContainer/HSlider" to="." method="_on_h_slider_mouse_exited"]
 [connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
