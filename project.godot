@@ -13,7 +13,7 @@ config_version=5
 config/name="lastDown"
 run/main_scene="res://UIscenes/mainMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://itemicons/icon.svg"
+config/icon="res://dialogue.png"
 
 [autoload]
 
