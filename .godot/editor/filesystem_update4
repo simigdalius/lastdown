@@ -1,11 +1,10 @@
 res://scenes/final_map.tscn
-res://UIscenes/options.tscn
 res://UIscenes/mousikoylaallover.tscn
 res://UIscenes/inventory.tscn
 res://UIscenes/mainMenu.tscn
 res://UIscenes/pause_interface.tscn
 res://scenes/player.tscn
-res://UI/options.gd
+res://UIscenes/options.tscn
 res://UIscenes/gameOver.tscn
 res://UIscenes/complition.tscn
 res://scenes/boss_arena.tscn

@@ -264,6 +264,22 @@ script = ExtResource("12_vodq4")
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0, -30.095, 0)
 shape = SubResource("BoxShape3D_1nv0m")
 
+[node name="deathZone3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.8585, 0, -52.5337)
+script = ExtResource("12_vodq4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="deathZone3"]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0, -30.095, 0)
+shape = SubResource("BoxShape3D_1nv0m")
+
+[node name="deathZone4" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79471, 0, -52.5337)
+script = ExtResource("12_vodq4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="deathZone4"]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0, -30.095, 0)
+shape = SubResource("BoxShape3D_1nv0m")
+
 [node name="movingplats" type="Node3D" parent="."]
 
 [node name="movingplatform" parent="movingplats" instance=ExtResource("12_4jr1s")]
@@ -5051,5 +5067,7 @@ volume_db = -20.0
 [connection signal="body_entered" from="levelchangezone" to="levelchangezone" method="_on_body_entered"]
 [connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
 [connection signal="body_entered" from="deathZone2" to="deathZone2" method="_on_body_entered"]
+[connection signal="body_entered" from="deathZone3" to="deathZone3" method="_on_body_entered"]
+[connection signal="body_entered" from="deathZone4" to="deathZone4" method="_on_body_entered"]
 [connection signal="body_entered" from="emfanizei onoma pistas" to="emfanizei onoma pistas" method="_on_body_entered"]
 [connection signal="timeout" from="emfanizei onoma pistas/Timer" to="emfanizei onoma pistas" method="_on_timer_timeout"]

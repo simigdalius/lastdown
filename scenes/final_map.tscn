@@ -240,6 +240,22 @@ script = ExtResource("9_m7jwt")
 transform = Transform3D(140, 0, 0, 0, 140, 0, 0, 0, 140, 44.6856, -51.482, 12.189)
 shape = SubResource("BoxShape3D_la6sk")
 
+[node name="deathZone2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.5998, 0, 0)
+script = ExtResource("9_m7jwt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="deathZone2"]
+transform = Transform3D(140, 0, 0, 0, 140, 0, 0, 0, 140, 44.6856, -51.482, 12.189)
+shape = SubResource("BoxShape3D_la6sk")
+
+[node name="deathZone3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.99939, -0.0349169, 0, 0.0349169, 0.99939, -331.669, 0, -216.912)
+script = ExtResource("9_m7jwt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="deathZone3"]
+transform = Transform3D(140, 0, 0, 0, 140, 0, 0, 0, 140, 44.6856, -51.482, 12.189)
+shape = SubResource("BoxShape3D_la6sk")
+
 [node name="backToHub" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 10, -22.5358, 0, -29.9953)
 mesh = SubResource("BoxMesh_48w2u")
@@ -7298,6 +7314,8 @@ light_color = Color(1, 0, 0, 1)
 volume_db = -20.0
 
 [connection signal="body_entered" from="deathZone" to="deathZone" method="_on_body_entered"]
+[connection signal="body_entered" from="deathZone2" to="deathZone2" method="_on_body_entered"]
+[connection signal="body_entered" from="deathZone3" to="deathZone3" method="_on_body_entered"]
 [connection signal="body_entered" from="levelchangezone" to="levelchangezone" method="_on_body_entered"]
 [connection signal="body_entered" from="emfanizei onoma pistas" to="emfanizei onoma pistas" method="_on_body_entered"]
 [connection signal="timeout" from="emfanizei onoma pistas/Timer" to="emfanizei onoma pistas" method="_on_timer_timeout"]
