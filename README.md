@@ -13,16 +13,6 @@
 
 Για να το πετύχει, ο παίκτης πρέπει να εξερευνήσει μια γραμμική πίστα για να βρει το κρυμμένο κλειδί, ενώ έχει τη δυνατότητα να εξερευνήσει δύο προαιρετικά επίπεδα (parkour & combat) για να αποκτήσει σημαντικά πλεονεκτήματα.
 
-# 💀 Last Down
-
-![Godot Engine](https://img.shields.io/badge/Godot_4.3-Blue?style=for-the-badge&logo=godotengine&logoColor=white)
-![GDScript](https://img.shields.io/badge/GDScript-Python_like-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
-
-Το **Last Down** είναι ένα 2.5D Top-Down Shooter παιχνίδι με στοιχεία platformer, ανεπτυγμένο αποκλειστικά στη μηχανή γραφικών Godot 4.3. Συνδυάζει γρήγορη δράση, εξερεύνηση και διαχείριση πόρων σε ένα σκοτεινό, fantasy περιβάλλον.
-
-![Last Down Gameplay Screenshot](Στιγμιότυπο%20οθόνης%20(569).png)
-
 ##  Εγκατάσταση & Εκτέλεση
 
 Για να παίξετε το παιχνίδι, δεν χρειάζεται να εγκαταστήσετε τη μηχανή γραφικών ή να κάνετε build τον κώδικα. Ακολουθήστε τα παρακάτω απλά βήματα:
