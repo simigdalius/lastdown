@@ -6,8 +6,7 @@
 
 Το **Last Down** είναι ένα 2.5D Top-Down Shooter παιχνίδι με στοιχεία platformer, ανεπτυγμένο αποκλειστικά στη μηχανή γραφικών Godot 4.3[cite: 1, 5, 16]. [cite_start]Συνδυάζει γρήγορη δράση, εξερεύνηση και διαχείριση πόρων σε ένα σκοτεινό, fantasy περιβάλλον
 
-![Last Down Gameplay Screenshot](<img width="1151" height="648" alt="Στιγμιότυπο οθόνης (569)" src="https://github.com/user-attachments/assets/af277f79-bfce-4a13-9713-a38a5826d251" />
-) 
+![Last Down Gameplay Screenshot](<img width="1151" height="648" alt="Στιγμιότυπο οθόνης (569)" src="https://github.com/user-attachments/assets/af277f79-bfce-4a13-9713-a38a5826d251" />)
 ##  Σύνοψη Παιχνιδιού
 
 Το παιχνίδι διαθέτει έναν κεντρικό κόμβο (Main Hub Room) που συνδέει τα διάφορα επίπεδα. Μέσα από διαλόγους με έναν NPC, ο παίκτης μαθαίνει τον τελικό του στόχο: να νικήσει τον **"Skull Master"**, ένα boss που βρίσκεται πίσω από μια κλειδωμένη πύλη.
